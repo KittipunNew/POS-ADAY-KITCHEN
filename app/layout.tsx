@@ -29,7 +29,6 @@ export default function RootLayout({
       <body
         className={`${kanit.className} font-kanit antialiased bg-[#f1f5f9]`}
       >
-        <Navbar />
         <div className="m-5">{children}</div>
       </body>
     </html>

@@ -1,8 +1,13 @@
+import Navbar from '@/components/navbar/Navbar';
+
 const page = () => {
   return (
-    <div>
-      <p>page</p>
-    </div>
+    <>
+      <Navbar />
+      <div className="m-5">
+        <p>page</p>
+      </div>
+    </>
   );
 };
 export default page;

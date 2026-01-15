@@ -1,4 +1,4 @@
-import NavbarCustomer from '@/components/navbar/NavbarCustomer';
+import NavbarCustomer from './_components/NavbarCustomer';
 
 export default function MenuLayout({
   children,
@@ -8,7 +8,7 @@ export default function MenuLayout({
   return (
     <div>
       <NavbarCustomer />
-      <div className="m-5">{children}</div>
+      <div>{children}</div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function MenuLayout({
   return (
     <div>
       <NavbarCustomer />
-      <div className="m-5">{children}</div>
+      <div>{children}</div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { Menu } from '@/utils/types';
+import { Menu, OrderItem } from '@/utils/types';
 import TableHeader from './TableHeader';
 
 import { useState } from 'react';
@@ -9,22 +9,37 @@ import OrderList from './OrderList';
 
 type Category = 'all' | 'food' | 'drink';
 
-const MenuClient = ({ tableId, menu }: { tableId: string; menu: Menu[] }) => {
+const MenuClient = ({ tableId, menus }: { tableId: string; menus: Menu[] }) => {
   const [category, setCategory] = useState<Category>('all');
+  const [orderList, setOrderList] = useState<OrderItem[]>([]);
+
+  const addToOrder = (menu: Menu) => {
+    setOrderList((prev) => {
+      const exist = prev.find((item) => item.id === menu.id);
+
+      if (exist) {
+        return prev.map((item) =>
+          item.id === menu.id ? { ...item, qty: item.qty + 1 } : item,
+        );
+      }
+
+      return [...prev, { ...menu, qty: 1 }];
+    });
+  };
 
   const filterMenu =
     category === 'all'
-      ? menu
-      : menu.filter((item) => item.category === category);
+      ? menus
+      : menus.filter((item) => item.category === category);
 
   return (
     <div className="flex flex-col md:flex-row">
       <div className="md:w-[60%]">
         <TableHeader tableId={tableId} setCategory={setCategory} />
-        <MenuGrid menus={filterMenu} />
+        <MenuGrid menus={filterMenu} onAdd={addToOrder} />
       </div>
       <div className="border-l p-5">
-        <OrderList />
+        <OrderList orderList={orderList} />
       </div>
     </div>
   );

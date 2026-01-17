@@ -15,7 +15,13 @@ import { useIsMobile } from '@/hooks/useIsMobile';
 const MOBILE_ITEMS = 10;
 const DESKTOP_ITEMS = 20;
 
-const MenuGrid = ({ menus }: { menus: Menu[] }) => {
+const MenuGrid = ({
+  menus,
+  onAdd,
+}: {
+  menus: Menu[];
+  onAdd: (menu: Menu) => void;
+}) => {
   const isMobile = useIsMobile();
   const itemsPerPage = isMobile ? MOBILE_ITEMS : DESKTOP_ITEMS;
 
@@ -40,6 +46,7 @@ const MenuGrid = ({ menus }: { menus: Menu[] }) => {
             <button
               key={item.id}
               className="bg-white p-4 rounded shadow-sm border flex flex-col"
+              onClick={() => onAdd(item)}
             >
               <p>{item.name}</p>
               <p className="text-sm text-neutral-400">{item.price} ฿</p>

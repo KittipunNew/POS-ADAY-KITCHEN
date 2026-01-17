@@ -7,7 +7,7 @@ const page = async ({ params }: { params: { tableId: string } }) => {
   return (
     <div>
       <div>
-        <Menu tableId={tableId} menu={menu} />
+        <Menu tableId={tableId} menus={menu} />
       </div>
     </div>
   );

@@ -41,8 +41,10 @@ const DigitalClock = () => {
   };
 
   return (
-    <div className="text-sm" suppressHydrationWarning>
-      <h1 className="text-end">{formatTime()}</h1>
+    <div className="text-sm">
+      <h1 className="text-end" suppressHydrationWarning>
+        {formatTime()}
+      </h1>
       <h1>{formatDate()}</h1>
     </div>
   );

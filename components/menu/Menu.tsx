@@ -21,7 +21,7 @@ const MenuClient = ({ tableId, menu }: { tableId: string; menu: Menu[] }) => {
     <div className="flex flex-col md:flex-row">
       <div className="md:w-[60%]">
         <TableHeader tableId={tableId} setCategory={setCategory} />
-        <MenuGrid menu={filterMenu} />
+        <MenuGrid menus={filterMenu} />
       </div>
       <div className="border-l p-5">
         <OrderList />

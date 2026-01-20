@@ -8,7 +8,8 @@ export default function MenuLayout({
   return (
     <div>
       <NavbarCustomer />
-      <div className="my-20">{children}</div>
+      <div className="bg-[#f1f5f9] w-full h-20"></div>
+      <div>{children}</div>
     </div>
   );
 }

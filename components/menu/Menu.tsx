@@ -34,18 +34,18 @@ const MenuClient = ({ tableId, menus }: { tableId: string; menus: Menu[] }) => {
       : menus.filter((item) => item.category === category);
 
   return (
-    <div className="flex flex-col md:flex-row h-screen md:overflow-hidden">
-      <div className="md:w-[70%] md:overflow-y-auto">
+    <div className="flex flex-col md:flex-row ">
+      <div className="md:w-[70%]">
         <TableHeader tableId={tableId} setCategory={setCategory} />
         <MenuGrid menus={filterMenu} onAdd={addToOrder} />
       </div>
 
-      <div className="md:border-l md:w-[30%] flex flex-col relative h-full">
-        <div className="flex-1 overflow-y-auto m-5 pb-32">
+      <div className="md:border-l md:w-[30%] flex flex-col relative">
+        <div className="m-5">
           <OrderList orderList={orderList} />
         </div>
 
-        <div className="fixed bottom-0 md:w-[30%] w-full bg-white">
+        <div className="fixed bottom-0 md:w-[30%] w-full bg-whit">
           <OrderSummary orderList={orderList} />
         </div>
       </div>

@@ -6,9 +6,7 @@ const page = async ({ params }: { params: { tableId: string } }) => {
   const menu = MOCK_MENU;
   return (
     <div>
-      <div>
-        <Menu tableId={tableId} menus={menu} />
-      </div>
+      <Menu tableId={tableId} menus={menu} />
     </div>
   );
 };

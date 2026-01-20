@@ -6,6 +6,7 @@ import TableHeader from './TableHeader';
 import { useState } from 'react';
 import MenuGrid from '@/components/menu/MenuGrid';
 import OrderList from './OrderList';
+import OrderSummary from './OrderSummary';
 
 type Category = 'all' | 'food' | 'drink';
 
@@ -34,12 +35,16 @@ const MenuClient = ({ tableId, menus }: { tableId: string; menus: Menu[] }) => {
 
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="md:w-[60%]">
+      <div className="md:w-[70%]">
         <TableHeader tableId={tableId} setCategory={setCategory} />
         <MenuGrid menus={filterMenu} onAdd={addToOrder} />
       </div>
-      <div className="border-l p-5">
-        <OrderList orderList={orderList} />
+
+      <div className="md:border-l md:w-[30%] flex flex-col justify-between">
+        <div className="m-5">
+          <OrderList orderList={orderList} />
+        </div>
+        <OrderSummary />
       </div>
     </div>
   );

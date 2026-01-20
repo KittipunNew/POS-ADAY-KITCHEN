@@ -2,15 +2,9 @@
 import { Menu } from '@/utils/types';
 import { useEffect, useState } from 'react';
 
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from '@/components/ui/pagination';
 import { useIsMobile } from '@/hooks/useIsMobile';
+import MenuCard from './MenuCard';
+import PaginationPage from './PaginationPage';
 
 const MOBILE_ITEMS = 10;
 const DESKTOP_ITEMS = 20;
@@ -39,64 +33,13 @@ const MenuGrid = ({
   );
 
   return (
-    <div>
-      <div className="mt-4 bg-white p-5 border">
-        <div className="grid grid-cols-2 gap-4 ">
-          {currentMenus.map((item) => (
-            <button
-              key={item.id}
-              className="bg-white p-4 rounded shadow-sm border flex flex-col"
-              onClick={() => onAdd(item)}
-            >
-              <p>{item.name}</p>
-              <p className="text-sm text-neutral-400">{item.price} ฿</p>
-            </button>
-          ))}
-        </div>
+    <div className="mt-4 bg-white p-5 border flex flex-col justify-between md:h-screen">
+      <div className="grid grid-cols-2 gap-4 ">
+        <MenuCard currentMenus={currentMenus} onAdd={onAdd} />
+      </div>
 
-        <div className="mt-4">
-          <Pagination>
-            <PaginationContent>
-              <PaginationItem>
-                <PaginationPrevious
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (page > 1) setPage(page - 1);
-                  }}
-                />
-              </PaginationItem>
-
-              {Array.from({ length: totalPages }).map((_, i) => {
-                const pageNumber = i + 1;
-                return (
-                  <PaginationItem key={pageNumber}>
-                    <PaginationLink
-                      href="#"
-                      isActive={page === pageNumber}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setPage(pageNumber);
-                      }}
-                    >
-                      {pageNumber}
-                    </PaginationLink>
-                  </PaginationItem>
-                );
-              })}
-
-              <PaginationItem>
-                <PaginationNext
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (page < totalPages) setPage(page + 1);
-                  }}
-                />
-              </PaginationItem>
-            </PaginationContent>
-          </Pagination>
-        </div>
+      <div className="mt-4">
+        <PaginationPage page={page} setPage={setPage} totalPages={totalPages} />
       </div>
     </div>
   );

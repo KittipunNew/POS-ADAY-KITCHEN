@@ -33,7 +33,7 @@ const MenuGrid = ({
   );
 
   return (
-    <div className="mt-4 bg-white p-5 border flex flex-col justify-between md:h-screen">
+    <div className="mt-4 bg-white p-5 border flex flex-col justify-between">
       <div className="grid grid-cols-2 gap-4 ">
         <MenuCard currentMenus={currentMenus} onAdd={onAdd} />
       </div>

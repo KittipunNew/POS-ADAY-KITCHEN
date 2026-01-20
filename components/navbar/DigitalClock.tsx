@@ -23,18 +23,18 @@ const DigitalClock = () => {
 
   const formatDate = () => {
     const days = [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
+      'อาทิตย์',
+      'จันทร์',
+      'อังคาร',
+      'พุธ',
+      'พฤหัสบดี',
+      'ศุกร์',
+      'เสาร์',
     ];
 
     const dayName = days[time.getDay()];
     const date = time.getDate();
-    const month = time.toLocaleString('en-US', { month: 'long' });
+    const month = time.toLocaleString('th-TH', { month: 'long' });
     const year = time.getFullYear();
 
     return `${dayName}, ${date} ${month} ${year}`;

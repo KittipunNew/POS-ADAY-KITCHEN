@@ -30,7 +30,9 @@ const TableHeader = ({
         <ButtonGroup>
           <Button
             className={
-              active === 'all' ? 'bg-yellow-500' : 'bg-white text-black'
+              active === 'all'
+                ? 'bg-yellow-500'
+                : 'bg-white text-black hover:text-white '
             }
             size="sm"
             onClick={() => handleClick('all')}
@@ -41,7 +43,9 @@ const TableHeader = ({
           <Button
             size="sm"
             className={
-              active === 'food' ? 'bg-yellow-500' : 'bg-white text-black'
+              active === 'food'
+                ? 'bg-yellow-500'
+                : 'bg-white text-black hover:text-white'
             }
             onClick={() => handleClick('food')}
           >
@@ -51,7 +55,9 @@ const TableHeader = ({
           <Button
             size="sm"
             className={
-              active === 'drink' ? 'bg-yellow-500' : 'bg-white text-black'
+              active === 'drink'
+                ? 'bg-yellow-500'
+                : 'bg-white text-black hover:text-white'
             }
             onClick={() => handleClick('drink')}
           >

@@ -1,4 +1,6 @@
-export const MOCK_MENU = [
+import { Menu } from '@/utils/types';
+
+export const MOCK_MENU: Menu[] = [
   { id: 1, name: 'ข้าวผัดหมู', category: 'food', price: 45 },
   { id: 2, name: 'ข้าวผัดไก่', category: 'food', price: 45 },
   { id: 3, name: 'ผัดกะเพราหมู', category: 'food', price: 50 },

@@ -3,7 +3,6 @@
 import { OrderItem } from '@/utils/types';
 
 const OrderList = ({ orderList }: { orderList: OrderItem[] }) => {
-  console.log(orderList);
   return (
     <div className="h-full flex flex-col">
       <h1 className="text-2xl mb-5">รายการออเดอร์</h1>

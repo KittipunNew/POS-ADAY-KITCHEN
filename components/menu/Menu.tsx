@@ -24,7 +24,16 @@ const MenuClient = ({ tableId, menus }: { tableId: string; menus: Menu[] }) => {
         );
       }
 
-      return [...prev, { ...menu, qty: 1 }];
+      const newOrderItem: OrderItem = {
+        id: menu.id,
+        name: menu.name,
+        category: menu.category,
+        price: menu.price,
+        qty: 1,
+        status: 'pending',
+      };
+
+      return [...prev, newOrderItem];
     });
   };
 
@@ -33,6 +42,7 @@ const MenuClient = ({ tableId, menus }: { tableId: string; menus: Menu[] }) => {
       ? menus
       : menus.filter((item) => item.category === category);
 
+  console.log(orderList);
   return (
     <div className="flex flex-col md:flex-row ">
       <div className="md:w-[70%]">

@@ -1,6 +1,8 @@
 import { OrderItem } from '@/utils/types';
 import { useMemo } from 'react';
 import { Button } from '@/components/ui/button';
+import OrderButton from './OrderButton';
+import PaymentButton from './PaymentButton';
 
 const OrderSummary = ({ orderList }: { orderList: OrderItem[] }) => {
   const totalPrice = useMemo(() => {
@@ -19,12 +21,8 @@ const OrderSummary = ({ orderList }: { orderList: OrderItem[] }) => {
         <p>{totalPrice.toLocaleString()} ฿</p>
       </div>
       <div className="flex justify-between gap-3 my-3">
-        <Button size={'lg'} className="w-[50%] bg-yellow-500 text-xl">
-          สั่งอหาร
-        </Button>
-        <Button size={'lg'} className="w-[50%] bg-green-500 text-xl">
-          เรียกเก็บเงิน
-        </Button>
+        <OrderButton />
+        <PaymentButton />
       </div>
     </div>
   );

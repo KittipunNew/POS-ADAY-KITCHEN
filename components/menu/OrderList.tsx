@@ -1,8 +1,9 @@
 'use client';
 
-import { OrderItem } from '@/utils/types';
+import { useOrderStore } from '@/store/order.store';
 
-const OrderList = ({ orderList }: { orderList: OrderItem[] }) => {
+const OrderList = () => {
+  const orderList = useOrderStore((s) => s.orderList);
   return (
     <div className="h-full flex flex-col">
       <h1 className="text-2xl mb-5">รายการออเดอร์</h1>

@@ -13,3 +13,11 @@ export type OrderItem = {
   qty: number;
   status: 'pending' | 'cooking' | 'done';
 };
+
+export type OrderStore = {
+  orderList: OrderItem[];
+  addToOrder: (menu: Menu) => void;
+  getTotalPrice: () => number;
+  getTotalOrder: () => number;
+  clearOrder: () => void;
+};

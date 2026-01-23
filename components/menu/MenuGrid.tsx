@@ -9,13 +9,7 @@ import PaginationPage from './PaginationPage';
 const MOBILE_ITEMS = 10;
 const DESKTOP_ITEMS = 20;
 
-const MenuGrid = ({
-  menus,
-  onAdd,
-}: {
-  menus: Menu[];
-  onAdd: (menu: Menu) => void;
-}) => {
+const MenuGrid = ({ menus }: { menus: Menu[] }) => {
   const isMobile = useIsMobile();
   const itemsPerPage = isMobile ? MOBILE_ITEMS : DESKTOP_ITEMS;
 
@@ -35,7 +29,7 @@ const MenuGrid = ({
   return (
     <div className="mt-4 bg-white p-5 border flex flex-col justify-between">
       <div className="grid grid-cols-2 gap-4 ">
-        <MenuCard currentMenus={currentMenus} onAdd={onAdd} />
+        <MenuCard currentMenus={currentMenus} />
       </div>
 
       <div className="mt-4">

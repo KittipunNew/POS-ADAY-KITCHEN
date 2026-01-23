@@ -1,0 +1,3 @@
+{
+  "/(customer)/tables/[tableId]/menu/page": "app/(customer)/tables/[tableId]/menu/page.js"
+}

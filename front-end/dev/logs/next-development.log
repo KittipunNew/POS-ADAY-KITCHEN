@@ -1,0 +1,110 @@
+[00:00:01.122] Server  LOG     ✓ Ready in 790ms
+[00:00:02.592] Server  LOG     []
+[00:00:03.493] Browser LOG     []
+[00:00:03.493] Browser LOG     [2;38;2;124;124;124m%s[0m []
+[00:00:29.708] Server  LOG     ✓ Compiled in 350ms
+[00:00:30.492] Browser LOG     []
+[00:00:30.492] Browser LOG     [2;38;2;124;124;124m%s[0m []
+[00:00:58.526] Server  LOG     ✓ Compiled in 51ms
+[00:00:58.604] Browser LOG     []
+[00:00:58.604] Browser LOG     [2;38;2;124;124;124m%s[0m []
+[00:21:27.887] Server  LOG     ✓ Compiled in 50ms
+[00:21:28.491] Browser ERROR   uncaughtError: ReferenceError: orderList is not defined
+[00:23:03.973] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:23:04.213] Server  LOG     []
+[00:23:04.231] Server  LOG     ✓ Compiled in 218ms
+[00:23:05.487] Browser LOG     []
+[00:23:05.487] Browser LOG     [2;38;2;124;124;124m%s[0m []
+[00:23:08.882] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"}]
+[00:23:08.882] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"}]
+[00:23:09.351] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"}]
+[00:23:09.351] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"}]
+[00:23:09.665] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"}]
+[00:23:09.665] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"}]
+[00:23:10.011] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"}]
+[00:23:10.011] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"}]
+[00:30:39.935] Server  LOG     ✓ Compiled in 45ms
+[00:30:40.045] Browser ERROR   uncaughtError: ReferenceError: onAdd is not defined
+[00:31:30.680] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:31:30.694] Server  LOG     ✓ Compiled in 44ms
+[00:31:30.836] Server  LOG     []
+[00:31:30.859] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"}]
+[00:31:30.859] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"}]
+[00:31:31.147] Browser LOG     []
+[00:31:31.147] Browser LOG     [2;38;2;124;124;124m%s[0m []
+[00:31:40.603] Server  LOG     ✓ Compiled in 44ms
+[00:31:58.789] Server  LOG     ✓ Compiled in 67ms
+[00:32:02.764] Server  LOG     []
+[00:32:03.010] Browser LOG     []
+[00:32:03.010] Browser LOG     [2;38;2;124;124;124m%s[0m []
+[00:32:03.790] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"}]
+[00:32:03.790] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"}]
+[00:32:04.393] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"}]
+[00:32:04.393] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"}]
+[00:32:04.713] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"}]
+[00:32:04.713] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"}]
+[00:32:04.955] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"}]
+[00:32:04.955] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"}]
+[00:32:05.239] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"},{"category":"food","id":5,"name":"ผัดพริกแกงหมู","price":55,"qty":1,"status":"pending"}]
+[00:32:05.239] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"},{"category":"food","id":5,"name":"ผัดพริกแกงหมู","price":55,"qty":1,"status":"pending"}]
+[00:32:05.513] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"},{"category":"food","id":5,"name":"ผัดพริกแกงหมู","price":55,"qty":1,"status":"pending"},{"category":"food","id":6,"name":"ผัดพริกแกงไก่","price":55,"qty":1,"status":"pending"}]
+[00:32:05.513] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"},{"category":"food","id":5,"name":"ผัดพริกแกงหมู","price":55,"qty":1,"status":"pending"},{"category":"food","id":6,"name":"ผัดพริกแกงไก่","price":55,"qty":1,"status":"pending"}]
+[00:32:16.756] Server  LOG     ✓ Compiled in 43ms
+[00:32:16.848] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"},{"category":"food","id":5,"name":"ผัดพริกแกงหมู","price":55,"qty":1,"status":"pending"},{"category":"food","id":6,"name":"ผัดพริกแกงไก่","price":55,"qty":1,"status":"pending"}]
+[00:32:16.848] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"},{"category":"food","id":5,"name":"ผัดพริกแกงหมู","price":55,"qty":1,"status":"pending"},{"category":"food","id":6,"name":"ผัดพริกแกงไก่","price":55,"qty":1,"status":"pending"}]
+[00:32:30.521] Server  LOG     ✓ Compiled in 42ms
+[00:32:30.599] Browser LOG     [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"},{"category":"food","id":5,"name":"ผัดพริกแกงหมู","price":55,"qty":1,"status":"pending"},{"category":"food","id":6,"name":"ผัดพริกแกงไก่","price":55,"qty":1,"status":"pending"}]
+[00:32:30.599] Browser LOG     [2;38;2;124;124;124m%s[0m [{"category":"food","id":1,"name":"ข้าวผัดหมู","price":45,"qty":1,"status":"pending"},{"category":"food","id":2,"name":"ข้าวผัดไก่","price":45,"qty":1,"status":"pending"},{"category":"food","id":4,"name":"ผัดกะเพราไก่","price":50,"qty":1,"status":"pending"},{"category":"food","id":3,"name":"ผัดกะเพราหมู","price":50,"qty":1,"status":"pending"},{"category":"food","id":5,"name":"ผัดพริกแกงหมู","price":55,"qty":1,"status":"pending"},{"category":"food","id":6,"name":"ผัดพริกแกงไก่","price":55,"qty":1,"status":"pending"}]
+[00:33:01.601] Server  LOG     ✓ Compiled in 45ms
+[00:33:32.622] Server  LOG     ✓ Compiled in 48ms
+[00:33:40.161] Server  LOG     ✓ Compiled in 50ms
+[00:33:53.058] Server  LOG     ✓ Compiled in 58ms
+[00:33:57.266] Server  LOG     ✓ Compiled in 45ms
+[00:44:08.825] Server  LOG     ✓ Compiled in 95ms
+[00:44:08.933] Browser ERROR   ./store/order.store.ts:34:43
+Parsing ecmascript source code failed
+  32 |     }),
+  33 |
+> 34 |     getTotalPrice: () => get().orderList. ,
+     |                                           ^
+  35 |
+  36 |   clearOrder: () => set({ orderList: [] }),
+  37 | }));
+
+Expected ident
+
+Import traces:
+  Client Component Browser:
+    ./store/order.store.ts [Client Component Browser]
+    ./components/menu/OrderSummary.tsx [Client Component Browser]
+    ./components/menu/Menu.tsx [Client Component Browser]
+    ./components/menu/Menu.tsx [Server Component]
+    ./app/(customer)/tables/[tableId]/menu/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./store/order.store.ts [Client Component SSR]
+    ./components/menu/OrderSummary.tsx [Client Component SSR]
+    ./components/menu/Menu.tsx [Client Component SSR]
+    ./components/menu/Menu.tsx [Server Component]
+    ./app/(customer)/tables/[tableId]/menu/page.tsx [Server Component]
+[00:46:36.258] Server  ERROR   ⨯ TypeError: Cannot read properties of undefined (reading 'orderList')
+[00:46:36.295] Server  LOG     ✓ Compiled in 48ms
+[00:46:36.551] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'orderList')
+[00:46:42.983] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:46:42.984] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./store/order.store.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:46:42.984] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:46:43.184] Server  LOG     ✓ Compiled in 48ms
+[00:51:12.597] Server  LOG     ✓ Compiled in 48ms
+[00:51:19.893] Server  LOG     ✓ Compiled in 41ms
+[00:51:24.913] Server  LOG     ✓ Compiled in 52ms
+[00:51:24.960] Browser ERROR   Functions are not valid as a React child. This may happen if you return %s instead of <%s /> from render. Or maybe you meant to call this function rather than return it.
+  <%s>{%s}</%s> getTotalPrice getTotalPrice h1 getTotalPrice h1
+[00:52:29.172] Server  LOG     ✓ Compiled in 39ms
+[00:52:42.158] Server  LOG     ✓ Compiled in 41ms
+[00:53:04.908] Server  LOG     ✓ Compiled in 52ms
+[00:53:28.477] Server  LOG     ✓ Compiled in 28ms
+[00:53:41.307] Server  LOG     ✓ Compiled in 39ms
+[01:00:22.963] Server  LOG     ✓ Compiled in 72ms
+[01:00:23.038] Browser LOG     []
+[01:00:23.038] Browser LOG     [2;38;2;124;124;124m%s[0m []
+[01:00:32.998] Server  LOG     ✓ Compiled in 72ms

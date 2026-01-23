@@ -1,5 +1,5 @@
-import { OrderItem, OrderStore } from '@/utils/types';
 import { create } from 'zustand';
+import { OrderItem, OrderStore } from '@/utils/types';
 
 export const useOrderStore = create<OrderStore>((set, get) => ({
   orderList: [],

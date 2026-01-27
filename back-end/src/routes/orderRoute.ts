@@ -1,9 +1,9 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import { readOrder, createOrder } from '../controllers/orderController';
 
 const router = express.Router();
 
-router.get('/order', (req: Request, res: Response) => {
-  res.send('Hello');
-});
+router.get('/order', readOrder);
+router.post('/order/create', createOrder);
 
 export default router;

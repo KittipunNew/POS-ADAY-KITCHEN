@@ -1,3 +1,5 @@
+'use client';
+
 import OrderButton from './OrderButton';
 import PaymentButton from './PaymentButton';
 import { useCartStore } from '@/store/cart.store';

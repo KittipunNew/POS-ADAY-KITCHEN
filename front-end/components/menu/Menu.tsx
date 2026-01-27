@@ -8,13 +8,13 @@ import MenuGrid from '@/components/menu/MenuGrid';
 import OrderList from './OrderList';
 import OrderSummary from './OrderSummary';
 
-type Category = 'all' | 'food' | 'drink';
+type Category = 'ALL' | 'FOOD' | 'DRINK';
 
 const MenuClient = ({ tableId, menus }: { tableId: string; menus: Menu[] }) => {
-  const [category, setCategory] = useState<Category>('all');
+  const [category, setCategory] = useState<Category>('ALL');
 
   const filterMenu =
-    category === 'all'
+    category === 'ALL'
       ? menus
       : menus.filter((item) => item.category === category);
 

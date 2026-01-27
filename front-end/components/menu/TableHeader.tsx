@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/button-group';
 import { useState } from 'react';
 
-type Category = 'all' | 'food' | 'drink';
+type Category = 'ALL' | 'FOOD' | 'DRINK';
 
 const TableHeader = ({
   tableId,
@@ -16,7 +16,7 @@ const TableHeader = ({
   tableId: string;
   setCategory: (category: Category) => void;
 }) => {
-  const [active, setActive] = useState<Category>('all');
+  const [active, setActive] = useState<Category>('ALL');
 
   const handleClick = (category: Category) => {
     setActive(category);
@@ -30,12 +30,12 @@ const TableHeader = ({
         <ButtonGroup>
           <Button
             className={
-              active === 'all'
+              active === 'ALL'
                 ? 'bg-yellow-500'
                 : 'bg-white text-black hover:text-white '
             }
             size="sm"
-            onClick={() => handleClick('all')}
+            onClick={() => handleClick('ALL')}
           >
             ทั้งหมด
           </Button>
@@ -43,11 +43,11 @@ const TableHeader = ({
           <Button
             size="sm"
             className={
-              active === 'food'
+              active === 'FOOD'
                 ? 'bg-yellow-500'
                 : 'bg-white text-black hover:text-white'
             }
-            onClick={() => handleClick('food')}
+            onClick={() => handleClick('FOOD')}
           >
             อาหาร
           </Button>
@@ -55,11 +55,11 @@ const TableHeader = ({
           <Button
             size="sm"
             className={
-              active === 'drink'
+              active === 'DRINK'
                 ? 'bg-yellow-500'
                 : 'bg-white text-black hover:text-white'
             }
-            onClick={() => handleClick('drink')}
+            onClick={() => handleClick('DRINK')}
           >
             เครื่องดื่ม
           </Button>

@@ -4,7 +4,7 @@ interface OrderItem {
   menuId: number;
   name: string;
   category: 'FOOD' | 'DRINK';
-  qty: number;
+  quantity: number;
   note?: string;
 }
 
@@ -22,7 +22,7 @@ const orderItemSchema = new mongoose.Schema<OrderItem>({
     enum: ['FOOD', 'DRINK'],
     required: true,
   },
-  qty: { type: Number, required: true },
+  quantity: { type: Number, required: true },
   note: String,
 });
 

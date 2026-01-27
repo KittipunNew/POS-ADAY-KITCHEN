@@ -1,17 +1,17 @@
 export type Menu = {
   id: number;
   name: string;
-  category: 'food' | 'drink';
+  category: 'FOOD' | 'DRINK';
   price: number;
 };
 
 export type OrderItem = {
   id: number;
   name: string;
-  category: 'food' | 'drink';
+  category: 'FOOD' | 'DRINK';
   price: number;
   qty: number;
-  status: 'pending' | 'cooking' | 'done';
+  status: 'PENDING' | 'COOKING' | 'DONE' | 'CANCELLED';
 };
 
 export type OrderStore = {

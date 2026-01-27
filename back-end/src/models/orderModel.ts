@@ -1,18 +1,42 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
-interface Order extends Document {
+interface OrderItem {
+  menuId: number;
   name: string;
-  price: number;
+  category: 'FOOD' | 'DRINK';
+  qty: number;
+  note?: string;
 }
 
-const orderSchema = new Schema<Order>(
+interface Order extends Document {
+  tableId: string;
+  items: OrderItem[];
+  status: 'PENDING' | 'COOKING' | 'DONE' | 'CANCELLED';
+}
+
+const orderItemSchema = new mongoose.Schema<OrderItem>({
+  menuId: { type: Number, required: true },
+  name: { type: String, required: true },
+  category: {
+    type: String,
+    enum: ['FOOD', 'DRINK'],
+    required: true,
+  },
+  qty: { type: Number, required: true },
+  note: String,
+});
+
+const orderSchema = new mongoose.Schema<Order>(
   {
-    name: { type: String, required: true },
-    price: { type: Number, required: true },
+    tableId: { type: String, required: true },
+    items: [orderItemSchema],
+    status: {
+      type: String,
+      enum: ['PENDING', 'COOKING', 'DONE', 'CANCELLED'],
+      default: 'PENDING',
+    },
   },
   { timestamps: true },
 );
 
-const OrderModel = mongoose.model<Order>('Order', orderSchema);
-
-export default OrderModel;
+export default mongoose.model('Order', orderSchema);

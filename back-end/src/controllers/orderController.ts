@@ -1,18 +1,17 @@
 import { Request, Response } from 'express';
 import OrderModel from '../models/orderModel';
 
-const readOrder = async (req: Request, res: Response) => {
-  const order = await OrderModel.find();
+export const readOrder = async (req: Request, res: Response) => {
+  const order = await OrderModel.find({});
+  res.send(order);
 };
 
-const createOrder = async (req: Request, res: Response) => {
+export const createOrder = async (req: Request, res: Response) => {
   try {
     const order = await OrderModel.create(req.body);
-    res.send('add order');
+    res.status(201).json(order);
   } catch (err) {
     console.log(err);
     res.status(500).send('Server Error');
   }
 };
-
-export { readOrder, createOrder };

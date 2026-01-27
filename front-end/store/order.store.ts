@@ -22,7 +22,7 @@ export const useOrderStore = create<OrderStore>((set, get) => ({
         category: menu.category,
         price: menu.price,
         qty: 1,
-        status: 'pending',
+        status: 'PENDING',
       };
 
       return {

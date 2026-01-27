@@ -1,23 +1,22 @@
 export type Menu = {
-  id: number;
+  id: string;
   name: string;
   category: 'FOOD' | 'DRINK';
   price: number;
 };
 
-export type OrderItem = {
-  id: number;
+export type CartItem = {
+  id: string;
   name: string;
   category: 'FOOD' | 'DRINK';
   price: number;
   qty: number;
-  status: 'PENDING' | 'COOKING' | 'DONE' | 'CANCELLED';
 };
 
-export type OrderStore = {
-  orderList: OrderItem[];
-  addToOrder: (menu: Menu) => void;
+export type CartStore = {
+  cartItems: CartItem[];
+  addToCart: (menu: Menu) => void;
   getTotalPrice: () => number;
-  getTotalOrder: () => number;
-  clearOrder: () => void;
+  getTotalQty: () => number;
+  clearCart: () => void;
 };

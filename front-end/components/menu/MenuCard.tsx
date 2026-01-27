@@ -1,8 +1,8 @@
 import { Menu } from '@/utils/types';
-import { useOrderStore } from '@/store/order.store';
+import { useCartStore } from '@/store/cart.store';
 
 const MenuCard = ({ currentMenus }: { currentMenus: Menu[] }) => {
-  const addToOrder = useOrderStore((s) => s.addToOrder);
+  const addToOrder = useCartStore((s) => s.addToCart);
 
   return (
     <>

@@ -1,15 +1,15 @@
 'use client';
 
-import { useOrderStore } from '@/store/order.store';
+import { useCartStore } from '@/store/cart.store';
 
 const OrderList = () => {
-  const orderList = useOrderStore((s) => s.orderList);
+  const cartItem = useCartStore((s) => s.cartItems);
   return (
     <div className="h-full flex flex-col">
       <h1 className="text-2xl mb-5">รายการออเดอร์</h1>
 
       <div>
-        {orderList.map((item, index) => (
+        {cartItem.map((item, index) => (
           <div
             key={index}
             className="flex gap-5 mb-3 p-3 w-full bg-white shadow rounded-xl justify-between"

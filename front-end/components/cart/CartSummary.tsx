@@ -1,10 +1,10 @@
 'use client';
 
-import OrderButton from './OrderButton';
-import PaymentButton from './PaymentButton';
+import ConfirmOrderButton from './ConfirmOrderButton';
+import CallStaffButton from '../table/CallStaffButton';
 import { useCartStore } from '@/store/cart.store';
 
-const OrderSummary = () => {
+const CartSummary = () => {
   const totalQty = useCartStore((s) => s.getTotalQty());
 
   const totalPrice = useCartStore((s) => s.getTotalPrice());
@@ -16,11 +16,11 @@ const OrderSummary = () => {
         <h1>ยอดรวม</h1>
         <p>{totalPrice.toLocaleString()} ฿</p>
       </div>
-      <div className="flex justify-between gap-3 my-3">
-        <OrderButton />
-        <PaymentButton />
+
+      <div className="mt-3">
+        <ConfirmOrderButton />
       </div>
     </div>
   );
 };
-export default OrderSummary;
+export default CartSummary;

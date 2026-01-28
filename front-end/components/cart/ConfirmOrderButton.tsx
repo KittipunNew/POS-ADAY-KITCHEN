@@ -5,7 +5,7 @@ import { useCartStore } from '@/store/cart.store';
 import { api } from '@/lib/axios';
 import { useState } from 'react';
 
-const OrderButton = () => {
+const ConfirmOrderButton = () => {
   const cartItems = useCartStore((s) => s.cartItems);
   const clearCart = useCartStore((s) => s.clearCart);
   const [loading, setLoading] = useState(false);
@@ -38,12 +38,12 @@ const OrderButton = () => {
   return (
     <Button
       size="lg"
-      className="w-[50%] bg-yellow-500 text-xl"
+      className="w-full bg-green-500 text-xl"
       onClick={handleSubmit}
       disabled={loading || cartItems.length === 0}
     >
-      {loading ? 'กำลังส่ง...' : 'สั่งอาหาร'}
+      {loading ? 'กำลังส่ง...' : 'ยืนยันการสั่งอาหาร'}
     </Button>
   );
 };
-export default OrderButton;
+export default ConfirmOrderButton;

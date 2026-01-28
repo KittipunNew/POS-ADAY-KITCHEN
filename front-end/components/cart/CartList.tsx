@@ -2,11 +2,11 @@
 
 import { useCartStore } from '@/store/cart.store';
 
-const OrderList = () => {
+const CartList = () => {
   const cartItem = useCartStore((s) => s.cartItems);
   return (
     <div className="h-full flex flex-col">
-      <h1 className="text-2xl mb-5">รายการออเดอร์</h1>
+      <h1 className="text-2xl mb-5">เมนูที่เลือก</h1>
 
       <div>
         {cartItem.map((item, index) => (
@@ -28,4 +28,4 @@ const OrderList = () => {
     </div>
   );
 };
-export default OrderList;
+export default CartList;

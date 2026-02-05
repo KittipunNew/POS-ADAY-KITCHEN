@@ -6,7 +6,7 @@ export type Menu = {
 };
 
 export type CartItem = {
-  id: string;
+  id: number;
   name: string;
   category: 'FOOD' | 'DRINK';
   price: number;

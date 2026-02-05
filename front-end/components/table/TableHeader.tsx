@@ -21,7 +21,7 @@ const TableHeader = ({
   };
 
   return (
-    <div className="flex items-center justify-between m-5">
+    <div className="flex flex-col items-end gap-5 lg:flex-row lg:items-center lg:justify-between p-5 bg-[#f1f5f9]">
       <h1>โต๊ะ {`T - ${tableId}`}</h1>
       <div className="flex gap-5">
         <CallStaffButton />

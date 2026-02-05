@@ -17,7 +17,7 @@ const PaginationPage = ({
   totalPages: number;
 }) => {
   return (
-    <>
+    <div className="bg-white py-2 pt-8">
       <Pagination>
         <PaginationContent>
           <PaginationItem>
@@ -59,7 +59,7 @@ const PaginationPage = ({
           </PaginationItem>
         </PaginationContent>
       </Pagination>
-    </>
+    </div>
   );
 };
 export default PaginationPage;

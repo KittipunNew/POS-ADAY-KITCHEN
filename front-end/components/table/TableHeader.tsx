@@ -3,17 +3,18 @@
 import { useState } from 'react';
 import CallStaffButton from './CallStaffButton';
 import CategoryTabs from './CategoryTabs';
+import { useParams } from 'next/navigation';
 
 type Category = 'ALL' | 'FOOD' | 'DRINK';
 
 const TableHeader = ({
-  tableId,
   setCategory,
 }: {
-  tableId: string;
   setCategory: (category: Category) => void;
 }) => {
   const [active, setActive] = useState<Category>('ALL');
+  const params = useParams();
+  const tableId = params.tableId as string;
 
   const handleClick = (category: Category) => {
     setActive(category);

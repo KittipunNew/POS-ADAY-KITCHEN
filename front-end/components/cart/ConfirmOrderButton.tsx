@@ -4,17 +4,21 @@ import { Button } from '@/components/ui/button';
 import { useCartStore } from '@/store/cart.store';
 import { api } from '@/lib/axios';
 import { useState } from 'react';
+import { useParams } from 'next/navigation';
 
 const ConfirmOrderButton = () => {
   const cartItems = useCartStore((s) => s.cartItems);
   const clearCart = useCartStore((s) => s.clearCart);
   const [loading, setLoading] = useState(false);
+  const params = useParams();
+
+  const tableId = params.tableId as string;
 
   const handleSubmit = async () => {
     if (cartItems.length === 0 || loading) return;
 
     const payload = {
-      tableId: 'A1',
+      tableId,
       items: cartItems.map((item) => ({
         menuId: item.id,
         name: item.name,

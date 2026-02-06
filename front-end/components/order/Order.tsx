@@ -3,7 +3,7 @@ import CartSummary from '../cart/CartSummary';
 
 const Order = () => {
   return (
-    <div className="lg:w-[30%]">
+    <div className="lg:border-l lg:w-[30%] relative h-full overflow-hidden">
       <OrderPanel />
       Order
       <CartSummary />

@@ -9,7 +9,7 @@ import { MOCK_MENU } from '@/mock-data/menu';
 import { CircleArrowLeft } from 'lucide-react';
 import Order from '@/components/order/Order';
 
-const MobileView = ({ tableId }: { tableId: string }) => {
+const MobileView = () => {
   const activePanel = useUIStore((s) => s.activePanel);
   const showMenu = useUIStore((s) => s.showMenu);
 
@@ -17,7 +17,7 @@ const MobileView = ({ tableId }: { tableId: string }) => {
     <div className="lg:hidden">
       {activePanel === 'MENU' && (
         <div className="h-screen">
-          <Menu tableId={tableId} menus={MOCK_MENU} />
+          <Menu menus={MOCK_MENU} />
           <CartButton />
         </div>
       )}

@@ -1,22 +1,14 @@
-import Cart from '@/components/cart/Cart';
-import Menu from '../../../../../components/menu/Menu';
-import { MOCK_MENU } from '@/mock-data/menu';
-
 import MobileView from './_components/MobileView';
 import DesktopView from './_components/DesktopView';
 
-const page = async ({ params }: { params: { tableId: string } }) => {
-  const { tableId } = await params;
-
-  const menu = MOCK_MENU;
-
+const page = () => {
   return (
     <>
       {/* desktop */}
-      <DesktopView tableId={tableId} />
+      <DesktopView />
 
       {/* mobile */}
-      <MobileView tableId={tableId} />
+      <MobileView />
     </>
   );
 };

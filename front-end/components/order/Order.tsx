@@ -1,12 +1,41 @@
+'use client';
+
 import OrderPanel from '@/app/(customer)/tables/[tableId]/menu/_components/OrderPanel';
 import CartSummary from '../cart/CartSummary';
+import CustomerOrders from './CustomerOrders';
 
-const Order = ({ children }: { children: React.ReactNode }) => {
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
+import OrderSummary from './OrderSummary';
+import { OrderType } from '@/utils/types';
+
+const Order = () => {
+  const [orders, setOrders] = useState<OrderType[]>([]);
+  const params = useParams();
+  const tableId = params.tableId as string;
+
+  useEffect(() => {
+    if (!tableId) return;
+    const fetchOrder = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:5000/api/orders/${tableId}`,
+        );
+        setOrders(res.data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+      }
+    };
+
+    fetchOrder();
+  }, [tableId]);
   return (
     <div className="lg:border-l lg:w-[30%] relative h-full overflow-hidden">
       <OrderPanel />
-      {children}
-      <CartSummary />
+      <CustomerOrders orders={orders} />
+      <OrderSummary orders={orders} />
     </div>
   );
 };

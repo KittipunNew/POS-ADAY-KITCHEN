@@ -5,6 +5,7 @@ interface OrderItem {
   name: string;
   category: 'FOOD' | 'DRINK';
   quantity: number;
+  price: number;
   note?: string;
 }
 
@@ -23,6 +24,7 @@ const orderItemSchema = new mongoose.Schema<OrderItem>({
     required: true,
   },
   quantity: { type: Number, required: true },
+  price: { type: Number, required: true },
   note: String,
 });
 

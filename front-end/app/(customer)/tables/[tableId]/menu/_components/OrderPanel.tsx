@@ -5,8 +5,6 @@ const OrderPanel = () => {
   const showCart = useUIStore((s) => s.showCart);
   const showOrder = useUIStore((s) => s.showOrder);
 
-  console.log(activePanel);
-
   return (
     <div className="relative">
       <div className="h-16 bg-white"></div>

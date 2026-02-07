@@ -14,7 +14,7 @@ const CartList = () => {
           >
             <div>
               <h1 className="text-lg">{item.name}</h1>
-              <p>x {item.qty}</p>
+              <p>x {item.quantity}</p>
             </div>
             <div>
               <p>{item.price} ฿</p>

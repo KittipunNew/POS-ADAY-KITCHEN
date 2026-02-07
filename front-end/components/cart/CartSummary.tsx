@@ -6,7 +6,6 @@ import { useCartStore } from '@/store/cart.store';
 
 const CartSummary = () => {
   const totalQty = useCartStore((s) => s.getTotalQty());
-
   const totalPrice = useCartStore((s) => s.getTotalPrice());
 
   return (

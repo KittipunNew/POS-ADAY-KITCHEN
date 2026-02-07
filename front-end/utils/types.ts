@@ -6,16 +6,16 @@ export type Menu = {
 };
 
 export type CartItem = {
-  id: number;
+  menuId: number;
   name: string;
   category: 'FOOD' | 'DRINK';
-  price?: number;
-  qty: number;
+  price: number;
+  quantity: number;
 };
 
 type OrderStatus = 'PENDING' | 'COOKING' | 'DONE' | 'CANCELLED';
 
-export type Order = {
+export type OrderType = {
   _id: string;
   tableId: string;
   items: CartItem[];

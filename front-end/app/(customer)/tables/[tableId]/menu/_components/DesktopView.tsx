@@ -5,7 +5,7 @@ import { MOCK_MENU } from '@/mock-data/menu';
 import Cart from '@/components/cart/Cart';
 import Menu from '@/components/menu/Menu';
 import Order from '@/components/order/Order';
-import CustomerOrders from './CustomerOrders';
+import CustomerOrders from '../../../../../../components/order/CustomerOrders';
 
 const DesktopView = () => {
   const activePanel = useUIStore((s) => s.activePanel);
@@ -27,9 +27,7 @@ const DesktopView = () => {
         <>
           <div className="hidden lg:flex lg:flex-row lg:h-320 xl:h-235 2xl:h-250">
             <Menu menus={MOCK_MENU} />
-            <Order>
-              <CustomerOrders />
-            </Order>
+            <Order />
           </div>
         </>
       )}

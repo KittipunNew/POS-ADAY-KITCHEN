@@ -10,20 +10,24 @@ const ConfirmOrderButton = () => {
   const cartItems = useCartStore((s) => s.cartItems);
   const clearCart = useCartStore((s) => s.clearCart);
   const [loading, setLoading] = useState(false);
-  const params = useParams();
 
-  const tableId = params.tableId as string;
+  const params = useParams();
+  const tableId = Array.isArray(params.tableId)
+    ? params.tableId[0]
+    : params.tableId;
 
   const handleSubmit = async () => {
-    if (cartItems.length === 0 || loading) return;
+    if (loading) return;
+    setLoading(true);
 
     const payload = {
       tableId,
       items: cartItems.map((item) => ({
-        menuId: item.id,
+        menuId: item.menuId,
         name: item.name,
         category: item.category.toUpperCase(),
-        quantity: item.qty,
+        quantity: item.quantity,
+        price: item.price,
       })),
     };
 

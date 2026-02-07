@@ -8,7 +8,7 @@ import MenuGrid from '@/components/menu/MenuGrid';
 
 type Category = 'ALL' | 'FOOD' | 'DRINK';
 
-const MenuClient = ({ tableId, menus }: { tableId: string; menus: Menu[] }) => {
+const MenuClient = ({ menus }: { menus: Menu[] }) => {
   const [category, setCategory] = useState<Category>('ALL');
 
   const filterMenu =
@@ -18,7 +18,7 @@ const MenuClient = ({ tableId, menus }: { tableId: string; menus: Menu[] }) => {
 
   return (
     <div className="lg:w-[70%] h-full bg-white flex flex-col overflow-hidden">
-      <TableHeader tableId={tableId} setCategory={setCategory} />
+      <TableHeader setCategory={setCategory} />
       <MenuGrid menus={filterMenu} />
     </div>
   );

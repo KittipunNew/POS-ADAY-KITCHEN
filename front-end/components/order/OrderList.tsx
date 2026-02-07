@@ -24,8 +24,6 @@ const OrderList = () => {
     fetchOrder();
   }, []);
 
-  console.log(orders);
-
   return (
     <>
       {orders.map((item, index) => (

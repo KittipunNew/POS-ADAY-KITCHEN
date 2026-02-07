@@ -6,22 +6,23 @@ export const useCartStore = create<CartStore>((set, get) => ({
 
   addToCart: (menu) =>
     set((state) => {
-      const exist = state.cartItems.find((item) => item.id === menu.id);
-
+      const exist = state.cartItems.find((item) => item.menuId === menu.id);
       if (exist) {
         return {
           cartItems: state.cartItems.map((item) =>
-            item.id === menu.id ? { ...item, qty: item.qty + 1 } : item,
+            item.menuId === menu.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : item,
           ),
         };
       }
 
       const newCartItem: CartItem = {
-        id: menu.id,
+        menuId: menu.id,
         name: menu.name,
         category: menu.category,
         price: menu.price,
-        qty: 1,
+        quantity: 1,
       };
 
       return {
@@ -30,9 +31,10 @@ export const useCartStore = create<CartStore>((set, get) => ({
     }),
 
   getTotalPrice: () =>
-    get().cartItems.reduce((sum, item) => sum + item.price * item.qty, 0),
+    get().cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0),
 
-  getTotalQty: () => get().cartItems.reduce((sum, item) => sum + item.qty, 0),
+  getTotalQty: () =>
+    get().cartItems.reduce((sum, item) => sum + item.quantity, 0),
 
   clearCart: () => set({ cartItems: [] }),
 }));

@@ -6,13 +6,20 @@ const CustomerOrders = ({ orders }: { orders: OrderType[] }) => {
   }
 
   return (
-    <div className="bg-white m-3 p-5 rounded-xl shadow">
+    <div className="m-3">
       {orders.map((item) => (
-        <div key={item._id} className="flex flex-col">
+        <div key={item._id} className="flex flex-col gap-3">
           {item.items.map((order) => (
-            <h1 key={order.menuId} className="text-lg m-2">
-              {order.name}
-            </h1>
+            <div
+              key={order.menuId}
+              className="flex items-center justify-between text-lg bg-white p-3 rounded-xl shadow"
+            >
+              <div className="flex items-center">
+                <h1 className="m-2">{order.name}</h1>
+                <h1>x {order.quantity}</h1>
+              </div>
+              <h1>{order.price.toLocaleString()} ฿</h1>
+            </div>
           ))}
         </div>
       ))}

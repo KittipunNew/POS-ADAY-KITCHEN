@@ -15,7 +15,7 @@ const MobileView = () => {
   const showMenu = useUIStore((s) => s.showMenu);
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       {activePanel === 'MENU' && (
         <div className="h-screen">
           <Menu menus={MOCK_MENU} />

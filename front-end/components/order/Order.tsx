@@ -1,7 +1,6 @@
 'use client';
 
 import OrderPanel from '@/app/(customer)/tables/[tableId]/menu/_components/OrderPanel';
-import CartSummary from '../cart/CartSummary';
 import CustomerOrders from './CustomerOrders';
 
 import axios from 'axios';
@@ -32,7 +31,7 @@ const Order = () => {
     fetchOrder();
   }, [tableId]);
   return (
-    <div className="lg:border-l lg:w-[30%] relative h-full overflow-hidden">
+    <div className="lg:border-l xl:w-[30%] relative h-full overflow-hidden">
       <OrderPanel />
       <CustomerOrders orders={orders} />
       <OrderSummary orders={orders} />

@@ -6,7 +6,7 @@ import CartSummary from './CartSummary';
 
 const Cart = () => {
   return (
-    <div className="lg:border-l lg:w-[30%] relative h-full overflow-hidden">
+    <div className="lg:border-l xl:w-[30%] relative h-full overflow-hidden">
       <OrderPanel />
       <CartList />
       <CartSummary />

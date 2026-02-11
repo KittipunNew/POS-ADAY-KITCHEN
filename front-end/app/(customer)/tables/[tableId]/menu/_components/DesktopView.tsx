@@ -14,7 +14,7 @@ const DesktopView = () => {
     <>
       {activePanel === 'MENU' || activePanel === 'CART' ? (
         <>
-          <div className="hidden lg:flex lg:flex-row lg:h-320 xl:h-235 2xl:h-250">
+          <div className="hidden xl:flex xl:flex-row  xl:h-235 2xl:h-250">
             <Menu menus={MOCK_MENU} />
             <Cart />
           </div>
@@ -25,7 +25,7 @@ const DesktopView = () => {
 
       {activePanel === 'ORDER' && (
         <>
-          <div className="hidden lg:flex lg:flex-row lg:h-320 xl:h-235 2xl:h-250">
+          <div className="hidden xl:flex xl:flex-row  xl:h-235 2xl:h-250">
             <Menu menus={MOCK_MENU} />
             <Order />
           </div>

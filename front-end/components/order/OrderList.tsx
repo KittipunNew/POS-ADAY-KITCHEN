@@ -1,11 +1,11 @@
 'use client';
 
-import { Order } from '@/utils/types';
+import { OrderType } from '@/utils/types';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 const OrderList = () => {
-  const [orders, setOrders] = useState<Order[]>([]);
+  const [orders, setOrders] = useState<OrderType[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -31,8 +31,8 @@ const OrderList = () => {
           {/* order card */}
           <div className="p-3 bg-white rounded-2xl shadow">
             <h1 className="text-xl mb-5">โต๊ะ {item.tableId}</h1>
-            <div className="flex flex-col gap-3">
-              {item.items.map((order, index) => (
+            <div className="flex flex-col gap-3 bg-black">
+              {item.items.map((order) => (
                 <h1>{order.name}</h1>
               ))}
             </div>

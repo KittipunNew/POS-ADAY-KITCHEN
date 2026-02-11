@@ -1,4 +1,5 @@
 import { OrderType } from '@/utils/types';
+import CheckBillButton from './CheckBillButton';
 
 const OrderSummary = ({ orders }: { orders: OrderType[] }) => {
   const summary = orders.reduce(
@@ -17,15 +18,18 @@ const OrderSummary = ({ orders }: { orders: OrderType[] }) => {
 
   return (
     <>
-      <div className="h-35 lg:hidden"></div>
-      <div className="fixed w-full bottom-0 lg:w-[30%]">
+      <div className="h-35 xl:hidden"></div>
+      <div className="fixed w-full bottom-0 xl:w-[30%]">
         <div className="bg-white p-5 border-t md:border-none md:shadow">
           <h1 className="text-neutral-400 text-end">
             {summary.totalQty} รายการ
           </h1>
           <div className="flex justify-between text-2xl">
-            <h1>ยอดรวม</h1>
+            <h1>ยอดชำระทั้งหมด</h1>
             <p>{summary.totalPrice.toLocaleString()} ฿</p>
+          </div>
+          <div className="mt-3">
+            <CheckBillButton />
           </div>
         </div>
       </div>

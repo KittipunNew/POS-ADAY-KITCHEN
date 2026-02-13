@@ -31,7 +31,7 @@ const Order = () => {
     fetchOrder();
   }, [tableId]);
   return (
-    <div className="lg:border-l xl:w-[30%] relative h-full overflow-hidden">
+    <div className="xl:w-[30%] h-full flex flex-col">
       <OrderPanel />
       <CustomerOrders orders={orders} />
       <OrderSummary orders={orders} />

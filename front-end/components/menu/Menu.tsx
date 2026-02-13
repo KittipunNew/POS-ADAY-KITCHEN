@@ -17,7 +17,7 @@ const MenuClient = ({ menus }: { menus: Menu[] }) => {
       : menus.filter((item) => item.category === category);
 
   return (
-    <div className="xl:w-[70%] h-full bg-white flex flex-col overflow-hidden">
+    <div className="xl:w-[70%] h-full flex flex-col bg-white">
       <TableHeader setCategory={setCategory} />
       <MenuGrid menus={filterMenu} />
     </div>

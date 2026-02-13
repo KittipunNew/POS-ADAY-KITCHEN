@@ -6,7 +6,7 @@ const CustomerOrders = ({ orders }: { orders: OrderType[] }) => {
   }
 
   return (
-    <div className="m-3">
+    <div className="flex-1 flex flex-col gap-3 py-5 px-3 overflow-y-auto">
       {orders.map((item) => (
         <div key={item._id} className="flex flex-col gap-3">
           {item.items.map((order) => (

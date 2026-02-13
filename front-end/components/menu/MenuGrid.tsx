@@ -27,14 +27,12 @@ const MenuGrid = ({ menus }: { menus: Menu[] }) => {
   );
 
   return (
-    <div className="flex flex-col flex-1 overflow-hidden">
-      <div className="flex-1 overflow-y-auto grid grid-cols-2 gap-4 p-3">
+    <div className="flex flex-col justify-between h-full">
+      <div className="grid grid-cols-2 gap-4 p-3 flex-1">
         <MenuCard currentMenus={currentMenus} />
       </div>
 
-      <div className="shrink-0">
-        <PaginationPage page={page} setPage={setPage} totalPages={totalPages} />
-      </div>
+      <PaginationPage page={page} setPage={setPage} totalPages={totalPages} />
     </div>
   );
 };

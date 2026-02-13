@@ -10,27 +10,19 @@ const DesktopView = () => {
   const activePanel = useUIStore((s) => s.activePanel);
 
   return (
-    <>
+    <div className="hidden xl:flex xl:flex-row h-full">
       {activePanel === 'MENU' || activePanel === 'CART' ? (
         <>
-          <div className="hidden xl:flex xl:flex-row  xl:h-235 2xl:h-250">
-            <Menu menus={MOCK_MENU} />
-            <Cart />
-          </div>
+          <Menu menus={MOCK_MENU} />
+          <Cart />
         </>
       ) : (
-        <></>
-      )}
-
-      {activePanel === 'ORDER' && (
         <>
-          <div className="hidden xl:flex xl:flex-row  xl:h-235 2xl:h-250">
-            <Menu menus={MOCK_MENU} />
-            <Order />
-          </div>
+          <Menu menus={MOCK_MENU} />
+          <Order />
         </>
       )}
-    </>
+    </div>
   );
 };
 export default DesktopView;

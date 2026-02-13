@@ -14,23 +14,18 @@ const OrderSummary = ({ orders }: { orders: OrderType[] }) => {
   );
 
   return (
-    <>
-      <div className="h-35 xl:hidden"></div>
-      <div className="fixed w-full bottom-0 xl:w-[30%]">
-        <div className="bg-white p-5 border-t md:border-none md:shadow">
-          <h1 className="text-neutral-400 text-end">
-            {summary.totalQty} รายการ
-          </h1>
-          <div className="flex justify-between text-2xl">
-            <h1>ยอดชำระทั้งหมด</h1>
-            <p>{summary.totalPrice.toLocaleString()} ฿</p>
-          </div>
-          <div className="mt-3">
-            <CheckBillButton orders={orders} />
-          </div>
+    <div className="w-full">
+      <div className="bg-white p-5 border-t md:border-none md:shadow">
+        <h1 className="text-neutral-400 text-end">{summary.totalQty} รายการ</h1>
+        <div className="flex justify-between text-2xl">
+          <h1>ยอดชำระทั้งหมด</h1>
+          <p>{summary.totalPrice.toLocaleString()} ฿</p>
+        </div>
+        <div className="mt-3">
+          <CheckBillButton orders={orders} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default OrderSummary;

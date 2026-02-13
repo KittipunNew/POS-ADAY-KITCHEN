@@ -13,9 +13,6 @@ const OrderSummary = ({ orders }: { orders: OrderType[] }) => {
     { totalQty: 0, totalPrice: 0 },
   );
 
-  console.log(summary.totalQty, summary.totalPrice);
-  console.log(orders);
-
   return (
     <>
       <div className="h-35 xl:hidden"></div>
@@ -29,7 +26,7 @@ const OrderSummary = ({ orders }: { orders: OrderType[] }) => {
             <p>{summary.totalPrice.toLocaleString()} ฿</p>
           </div>
           <div className="mt-3">
-            <CheckBillButton />
+            <CheckBillButton orders={orders} />
           </div>
         </div>
       </div>

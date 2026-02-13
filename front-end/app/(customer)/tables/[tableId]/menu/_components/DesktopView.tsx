@@ -5,7 +5,6 @@ import { MOCK_MENU } from '@/mock-data/menu';
 import Cart from '@/components/cart/Cart';
 import Menu from '@/components/menu/Menu';
 import Order from '@/components/order/Order';
-import CustomerOrders from '../../../../../../components/order/CustomerOrders';
 
 const DesktopView = () => {
   const activePanel = useUIStore((s) => s.activePanel);

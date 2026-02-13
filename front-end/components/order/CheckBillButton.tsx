@@ -1,8 +1,14 @@
 import { Button } from '@/components/ui/button';
+import { OrderType } from '@/utils/types';
 
-const CheckBillButton = () => {
+const CheckBillButton = ({ orders }: { orders: OrderType[] }) => {
+  console.log(orders.length);
   return (
-    <Button size={'lg'} className="bg-green-500 w-full text-xl">
+    <Button
+      size={'lg'}
+      className="bg-green-500 w-full text-xl"
+      disabled={orders.length === 0}
+    >
       เรียกชำระเงิน
     </Button>
   );

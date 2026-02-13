@@ -8,7 +8,6 @@ import { MOCK_MENU } from '@/mock-data/menu';
 
 import { CircleArrowLeft } from 'lucide-react';
 import Order from '@/components/order/Order';
-import CustomerOrders from '../../../../../../components/order/CustomerOrders';
 
 const MobileView = () => {
   const activePanel = useUIStore((s) => s.activePanel);

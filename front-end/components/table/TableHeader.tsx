@@ -23,7 +23,7 @@ const TableHeader = ({
 
   return (
     <div className="flex flex-col items-end gap-5 lg:flex-row lg:items-center lg:justify-between p-5 bg-[#f1f5f9]">
-      <h1>โต๊ะ {`T - ${tableId}`}</h1>
+      {params.tableId ? <h1>โต๊ะ {`T - ${tableId}`}</h1> : <div></div>}
       <div className="flex gap-5">
         <CallStaffButton />
         <CategoryTabs active={active} handleClick={handleClick} />

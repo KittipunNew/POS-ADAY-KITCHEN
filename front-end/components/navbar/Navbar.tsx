@@ -4,7 +4,7 @@ import DigitalClock from './DigitalClock';
 
 const Navbar = () => {
   return (
-    <div className="flex items-cente justify-between gap-5 bg-white p-5 shadow-lg">
+    <div className="flex items-cente justify-between gap-5 bg-white p-5 shadow-lg border-b">
       <div className="flex items-center">
         <div className="mr-10">
           <Logo />

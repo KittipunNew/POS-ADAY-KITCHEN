@@ -1,5 +1,5 @@
-import MobileView from './_components/MobileView';
-import DesktopView from './_components/DesktopView';
+import DesktopView from '@/components/DesktopView';
+import MobileView from '@/components/MobileView';
 
 const page = () => {
   return (

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Kanit } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/navbar/Navbar';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

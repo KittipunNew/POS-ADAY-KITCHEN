@@ -2,7 +2,11 @@ import { OrderType } from '@/utils/types';
 
 const CustomerOrders = ({ orders }: { orders: OrderType[] }) => {
   if (orders.length === 0) {
-    return <p className="text-center text-gray-400 mt-10">ยังไม่มีออเดอร์</p>;
+    return (
+      <div className="flex-1 flex flex-col gap-3 py-5 px-3 overflow-y-auto">
+        <p className="text-center text-gray-400 mt-10">ยังไม่มีออเดอร์</p>
+      </div>
+    );
   }
 
   return (

@@ -2,7 +2,6 @@ import { Button } from '@/components/ui/button';
 import { OrderType } from '@/utils/types';
 
 const CheckBillButton = ({ orders }: { orders: OrderType[] }) => {
-  console.log(orders.length);
   return (
     <Button
       size={'lg'}

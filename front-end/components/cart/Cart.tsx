@@ -12,8 +12,11 @@ const Cart = () => {
   const totalPrice = useCartStore((s) => s.getTotalPrice());
 
   const params = useParams();
+  const tableId =
+    (Array.isArray(params.tableId) ? params.tableId[0] : params.tableId) ?? '';
 
-  console.log(typeof totalPrice, typeof totalQty);
+  console.log(typeof tableId);
+
   return (
     <div className="xl:w-[30%] h-full flex flex-col">
       <OrderPanel />
@@ -24,11 +27,15 @@ const Cart = () => {
           totalPrice={totalPrice}
           label="ยอดในตะกร้า"
         >
-          <ConfirmOrderButton />
+          <ConfirmOrderButton tableId={tableId} />
         </Summary>
       ) : (
-        <Summary totalQty={totalQty} totalPrice={totalPrice} label="ยอดชำระ">
-          <ConfirmOrderButton />
+        <Summary
+          totalQty={totalQty}
+          totalPrice={totalPrice}
+          label="ยอดที่ต้องชำระ"
+        >
+          <ConfirmOrderButton tableId="กลับบ้าน" />
         </Summary>
       )}
     </div>

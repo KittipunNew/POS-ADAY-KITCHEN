@@ -9,11 +9,13 @@ interface IncomingItem {
   price: number;
 }
 
+// รายการออเดอร์ทั้งหมด
 export const readOrder = async (req: Request, res: Response) => {
   const orders = await OrderModel.find({});
   res.send(orders);
 };
 
+// รายการออเดอร์แต่ละโต๊ะ
 export const getOrderByTableId = async (req: Request, res: Response) => {
   const { tableId } = req.params;
 
@@ -22,25 +24,59 @@ export const getOrderByTableId = async (req: Request, res: Response) => {
   res.json(orders);
 };
 
+// เจนเลขคิว
+const generateQueueNumber = async () => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const lastOrder = await OrderModel.findOne({
+    createdAt: { $gte: today },
+    tableId: { $regex: /^A-\d{3}$/ },
+  }).sort({ createdAt: -1 });
+
+  let nextNum = 1;
+
+  if (lastOrder) {
+    const lastId = lastOrder.tableId;
+    const currentNum = parseInt(lastId.split('-')[1]);
+    nextNum = currentNum + 1;
+  }
+
+  return `A-${String(nextNum).padStart(3, '0')}`;
+};
+
 export const createOrder = async (req: Request, res: Response) => {
   try {
-    const { tableId, items } = req.body;
+    let { tableId } = req.body;
+    const { items } = req.body;
 
-    let order = await OrderModel.findOne({
-      tableId,
-      status: { $in: ['PENDING', 'COOKING'] },
-    });
+    let order;
 
-    if (!order) {
+    // แยกเงื่อนไขจัดการโต๊ะ "กลับบ้าน" และ "ทานที่ร้าน"
+    if (tableId === 'กลับบ้าน') {
+      tableId = await generateQueueNumber();
       order = new OrderModel({
         tableId,
         items: [],
       });
+    } else {
+      order = await OrderModel.findOne({
+        tableId,
+        status: { $in: ['PENDING', 'COOKING'] },
+      });
+
+      if (!order) {
+        order = new OrderModel({
+          tableId,
+          items: [],
+        });
+      }
     }
 
+    // รวมรายการอาหารเข้าออเดอร์
     items.forEach((newItem: IncomingItem) => {
       const existItem = order.items.find(
-        (item) => item.menuId.toString() === newItem.menuId.toString(),
+        (item: any) => item.menuId.toString() === newItem.menuId.toString(),
       );
 
       if (existItem) {

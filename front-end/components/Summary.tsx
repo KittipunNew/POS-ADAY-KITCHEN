@@ -1,9 +1,4 @@
-type SummaryProps = {
-  children: React.ReactNode;
-  totalQty: number;
-  label: string;
-  totalPrice: number;
-};
+import { SummaryProps } from '@/utils/types';
 
 const Summary = ({ children, totalQty, label, totalPrice }: SummaryProps) => {
   return (

@@ -1,33 +1,45 @@
-export type Menu = {
-  id: number;
-  name: string;
-  category: 'FOOD' | 'DRINK';
-  price: number;
-};
+export type Category = 'ALL' | 'FOOD' | 'DRINK';
 
-export type CartItem = {
+export interface Menu {
   menuId: number;
   name: string;
-  category: 'FOOD' | 'DRINK';
+  category: Category;
   price: number;
+}
+
+export interface CartItem extends Menu {
   quantity: number;
-};
+}
 
-type OrderStatus = 'PENDING' | 'COOKING' | 'DONE' | 'CANCELLED';
+export type OrderStatus = 'PENDING' | 'COOKING' | 'DONE' | 'CANCELLED';
 
-export type OrderType = {
+export interface OrderType {
   _id: string;
   tableId: string;
   items: CartItem[];
   status: OrderStatus;
   createdAt: string;
   updatedAt: string;
-};
+}
 
-export type CartStore = {
+export interface CartStore {
   cartItems: CartItem[];
   addToCart: (menu: Menu) => void;
   getTotalPrice: () => number;
   getTotalQty: () => number;
   clearCart: () => void;
-};
+}
+
+export interface TakeawayModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onConfirm: () => void;
+  loading: boolean;
+}
+
+export interface SummaryProps {
+  children: React.ReactNode;
+  totalQty: number;
+  label: string;
+  totalPrice: number;
+}

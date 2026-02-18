@@ -8,7 +8,7 @@ const MenuCard = ({ currentMenus }: { currentMenus: Menu[] }) => {
     <>
       {currentMenus.map((item) => (
         <button
-          key={item.id}
+          key={item.menuId}
           className="bg-white p-4 rounded shadow-sm border flex flex-col"
           onClick={() => addToOrder(item)}
         >

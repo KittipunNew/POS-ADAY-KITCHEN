@@ -1,12 +1,10 @@
 'use client';
 
-import { Menu } from '@/utils/types';
+import { Category, Menu } from '@/utils/types';
 import TableHeader from '../table/TableHeader';
 
 import { useState } from 'react';
 import MenuGrid from '@/components/menu/MenuGrid';
-
-type Category = 'ALL' | 'FOOD' | 'DRINK';
 
 const MenuClient = ({ menus }: { menus: Menu[] }) => {
   const [category, setCategory] = useState<Category>('ALL');

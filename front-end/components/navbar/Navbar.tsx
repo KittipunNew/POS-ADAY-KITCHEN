@@ -10,10 +10,11 @@ const Navbar = () => {
           <Logo />
         </div>
         <div className="flex gap-5">
-          <ModuleTab label="แผนผังโต๊ะ" href="/tables" />
-          <ModuleTab label="ครัว/บาร์" href="/kitchen" />
-          <ModuleTab label="รายงาน&รายสัปดาห์" href="/report" />
-          <ModuleTab label="จัดการเมนู" href="/edit-menu" />
+          <ModuleTab label="แผนผังโต๊ะ" href="/admin/tables" />
+          <ModuleTab label="ครัว/บาร์" href="/admin/kitchen" />
+          <ModuleTab label="รายงาน&รายสัปดาห์" href="/admin/report" />
+          <ModuleTab label="จัดการเมนู" href="/admin/manage-menu" />
+          <ModuleTab label="จัดการโต๊ะอาหาร" href="/admin/manage-table" />
         </div>
       </div>
       <div>

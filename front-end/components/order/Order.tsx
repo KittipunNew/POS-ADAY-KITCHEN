@@ -1,6 +1,6 @@
 'use client';
 
-import OrderPanel from '@/app/(customer)/tables/[tableId]/menu/_components/OrderPanel';
+import OrderPanel from '@/app/(customer)/table/[tableId]/_components/OrderPanel';
 import CustomerOrders from './CustomerOrders';
 
 import axios from 'axios';

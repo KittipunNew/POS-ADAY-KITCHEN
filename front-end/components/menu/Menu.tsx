@@ -1,7 +1,7 @@
 'use client';
 
 import { Category, Menu } from '@/utils/types';
-import TableHeader from '../table/TableHeader';
+import TableHeader from '../table/header/TableHeader';
 
 import { useState } from 'react';
 import MenuGrid from '@/components/menu/MenuGrid';

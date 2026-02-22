@@ -24,7 +24,7 @@ export const getOrderByTableId = async (req: Request, res: Response) => {
   res.json(orders);
 };
 
-// เจนเลขคิว
+// เจนเลขคิวสำหรับออเดอร์กลับบ้าน
 const generateQueueNumber = async () => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -45,6 +45,7 @@ const generateQueueNumber = async () => {
   return `A-${String(nextNum).padStart(3, '0')}`;
 };
 
+// สร้างออเดอร์
 export const createOrder = async (req: Request, res: Response) => {
   try {
     let { tableId } = req.body;
@@ -52,7 +53,6 @@ export const createOrder = async (req: Request, res: Response) => {
 
     let order;
 
-    // แยกเงื่อนไขจัดการโต๊ะ "กลับบ้าน" และ "ทานที่ร้าน"
     if (tableId === 'กลับบ้าน') {
       tableId = await generateQueueNumber();
       order = new OrderModel({

@@ -1,5 +1,5 @@
-import { Button } from '../ui/button';
-import { ButtonGroup, ButtonGroupSeparator } from '../ui/button-group';
+import { Button } from '../../ui/button';
+import { ButtonGroup, ButtonGroupSeparator } from '../../ui/button-group';
 
 type Category = 'ALL' | 'FOOD' | 'DRINK';
 

@@ -1,5 +1,5 @@
-import DigitalClock from '../../../../../../components/navbar/DigitalClock';
-import Logo from '../../../../../../components/navbar/Logo';
+import DigitalClock from '../../../../../components/navbar/DigitalClock';
+import Logo from '../../../../../components/navbar/Logo';
 
 const NavbarCustomer = () => {
   return (

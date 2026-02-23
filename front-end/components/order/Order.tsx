@@ -42,6 +42,7 @@ const Order = () => {
 
     fetchOrder();
   }, [tableId]);
+
   return (
     <div className="xl:w-[30%] h-full flex flex-col">
       <OrderPanel />

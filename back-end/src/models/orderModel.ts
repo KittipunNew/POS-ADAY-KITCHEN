@@ -1,7 +1,6 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Document } from 'mongoose';
 
 interface OrderItem {
-  menuId: number;
   name: string;
   category: 'FOOD' | 'DRINK';
   quantity: number;
@@ -16,7 +15,6 @@ interface Order extends Document {
 }
 
 const orderItemSchema = new mongoose.Schema<OrderItem>({
-  menuId: { type: Number, required: true },
   name: { type: String, required: true },
   category: {
     type: String,

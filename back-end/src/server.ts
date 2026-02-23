@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db';
 
 import orderRoute from './routes/orderRoute';
+import menuRoute from './routes/menuRoute';
 
 const app = express();
 const port = 5000;
@@ -22,6 +23,7 @@ app.use(cors());
 
 // Route
 app.use('/api', orderRoute);
+app.use('/api', menuRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

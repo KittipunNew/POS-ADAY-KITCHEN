@@ -4,6 +4,7 @@ import menuModel from '../models/menuModel';
 export const createMenu = async (req: Request, res: Response) => {
   try {
     const { name, category, price } = req.body;
+    console.log(req.body);
 
     const menu = new menuModel({
       name,

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Kanit } from 'next/font/google';
 import './globals.css';
+import QueryProvider from '@/providers/QueryProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${kanit.className} font-kanit antialiased bg-[#f1f5f9]`}
       >
-        <div>{children}</div>
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );

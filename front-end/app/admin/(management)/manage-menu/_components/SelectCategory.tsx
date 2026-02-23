@@ -7,21 +7,23 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-const SelectCategory = () => {
+const SelectCategory = ({
+  onValueChange,
+}: {
+  onValueChange: (value: string) => void;
+}) => {
   return (
-    <>
-      <Select>
-        <SelectTrigger className="w-full max-w-xl">
-          <SelectValue placeholder="ประเภท" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectGroup>
-            <SelectItem value="FOOD">อาหาร</SelectItem>
-            <SelectItem value="DRINK">เครื่องดื่ม</SelectItem>
-          </SelectGroup>
-        </SelectContent>
-      </Select>
-    </>
+    <Select onValueChange={onValueChange}>
+      <SelectTrigger className="w-full max-w-xl">
+        <SelectValue placeholder="ประเภท" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectItem value="FOOD">อาหาร</SelectItem>
+          <SelectItem value="DRINK">เครื่องดื่ม</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 };
 export default SelectCategory;

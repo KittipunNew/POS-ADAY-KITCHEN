@@ -4,11 +4,12 @@ import { Field, FieldGroup } from '@/components/ui/field';
 import { Input } from '@/components/ui/input';
 import SelectCategory from './SelectCategory';
 import { Button } from '@/components/ui/button';
+import { api } from '@/lib/axios';
 
 const AddMenu = () => {
   const [formData, setFormData] = useState({
     name: '',
-    categoty: '',
+    category: '',
     price: '',
   });
 
@@ -17,9 +18,18 @@ const AddMenu = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const hadleSubmit = (e: React.FormEvent) => {
+  const handleCategoryChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, category: value }));
+  };
+
+  const hadleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('ข้อมูลที่จะส่งไป API:', formData);
+    try {
+      await api.post('/menu/create', formData);
+    } catch (err) {
+      console.error(err);
+      alert('เพิ่มเมนูไม่สำเร็จ');
+    }
   };
 
   return (
@@ -38,7 +48,7 @@ const AddMenu = () => {
           />
         </Field>
         <Field>
-          <SelectCategory />
+          <SelectCategory onValueChange={handleCategoryChange} />
         </Field>
         <Field className="flex">
           <Input

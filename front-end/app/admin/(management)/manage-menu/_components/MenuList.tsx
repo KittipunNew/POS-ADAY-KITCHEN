@@ -9,7 +9,7 @@ const MenuList = () => {
   return (
     <div className="mt-5">
       {data?.map((item: any) => (
-        <div key={item.id}>{item.name}</div>
+        <div key={item._id}>{item.name}</div>
       ))}
     </div>
   );

@@ -1,6 +1,11 @@
 import { Request, Response } from 'express';
 import menuModel from '../models/menuModel';
 
+export const getMenus = async (req: Request, res: Response) => {
+  const menus = await menuModel.find({});
+  res.send(menus);
+};
+
 export const createMenu = async (req: Request, res: Response) => {
   try {
     const { name, category, price } = req.body;

@@ -1,10 +1,25 @@
-import { useQuery } from '@tanstack/react-query';
-import { getMenus } from '@/services/menuService';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { addMenu, getMenus } from '@/services/menuService';
+import { Menu } from '@/utils/types';
 
 export const useMenu = () => {
   return useQuery({
-    queryKey: ['menus'], // Key สำหรับอ้างอิง Cache
-    queryFn: getMenus, // ฟังก์ชันดึงข้อมูลที่สร้างไว้ใน service
-    staleTime: 1000 * 60 * 5, // เก็บข้อมูลไว้ 5 นาทีโดยไม่ดึงใหม่ถ้าไม่มีการเปลี่ยนแปลง
+    queryKey: ['menus'],
+    queryFn: getMenus,
+    staleTime: 1000 * 60 * 5,
+  });
+};
+
+export const useAddMenu = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<Menu, Error, Partial<Menu>>({
+    mutationFn: (newMenu) => addMenu(newMenu),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['menus'] });
+    },
+    onError: (error) => {
+      console.error('Add menu failed:', error);
+    },
   });
 };

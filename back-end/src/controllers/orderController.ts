@@ -10,7 +10,7 @@ interface IncomingItem {
 }
 
 // รายการออเดอร์ทั้งหมด
-export const readOrder = async (req: Request, res: Response) => {
+export const getOrder = async (req: Request, res: Response) => {
   const orders = await OrderModel.find({});
   res.send(orders);
 };

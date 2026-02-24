@@ -25,3 +25,19 @@ export const createMenu = async (req: Request, res: Response) => {
     res.status(500).send('Server Error');
   }
 };
+
+export const deleteMenu = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.body;
+    const menu = await menuModel.findByIdAndDelete(id);
+
+    if (!menu) {
+      return res.status(404).json({ message: 'Menu not found' });
+    }
+
+    res.status(200).json({ message: 'Menu deleted successfully', menu });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+};

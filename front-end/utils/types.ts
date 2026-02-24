@@ -1,7 +1,7 @@
 export type Category = 'ALL' | 'FOOD' | 'DRINK';
 
 export interface Menu {
-  menuId: number;
+  _id: string;
   name: string;
   category: Category;
   price: number;

@@ -4,7 +4,8 @@ import { Field, FieldGroup } from '@/components/ui/field';
 import { Input } from '@/components/ui/input';
 import SelectCategory from './SelectCategory';
 import { Button } from '@/components/ui/button';
-import { api } from '@/lib/axios';
+import { useAddMenu } from '@/hooks/useMenu';
+import { Category } from '@/utils/types';
 
 const AddMenu = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const AddMenu = () => {
     category: '',
     price: '',
   });
+  const addMenuMutation = useAddMenu();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -22,20 +24,30 @@ const AddMenu = () => {
     setFormData((prev) => ({ ...prev, category: value }));
   };
 
-  const hadleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      await api.post('/menu/create', formData);
-    } catch (err) {
-      console.error(err);
-      alert('เพิ่มเมนูไม่สำเร็จ');
-    }
+    const payload = {
+      ...formData,
+      price: Number(formData.price),
+      category: formData.category as Category,
+    };
+
+    addMenuMutation.mutate(payload, {
+      onSuccess: () => {
+        setFormData({ name: '', category: '', price: '' });
+        alert('เพิ่มเมนูสำเร็จ');
+      },
+      onError: (err) => {
+        console.error(err);
+        alert('เพิ่มเมนูไม่สำเร็จ');
+      },
+    });
   };
 
   return (
     <form
       className="p-5 shadow border bg-white rounded-2xl max-w-xl"
-      onSubmit={hadleSubmit}
+      onSubmit={handleSubmit}
     >
       <FieldGroup className="grid max-w-xl grid-cols-2">
         <Field>

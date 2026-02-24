@@ -41,3 +41,18 @@ export const deleteMenu = async (req: Request, res: Response) => {
     res.status(500).send('Server Error');
   }
 };
+
+// สำหรับเพิ่มรายการอาหารทีละหลายรายการ
+export const createManyMenus = async (req: Request, res: Response) => {
+  try {
+    const menusData = req.body;
+    console.log(menusData);
+
+    const menus = await menuModel.insertMany(menusData);
+
+    res.status(201).json(menus);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+};

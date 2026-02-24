@@ -2,22 +2,23 @@
 
 import { Category, Menu } from '@/utils/types';
 import TableHeader from '../table/header/TableHeader';
-
 import { useState } from 'react';
 import MenuGrid from '@/components/menu/MenuGrid';
+import { useMenu } from '@/hooks/useMenu';
 
-const MenuClient = ({ menus }: { menus: Menu[] }) => {
+const MenuClient = () => {
   const [category, setCategory] = useState<Category>('ALL');
+  const { data, isLoading } = useMenu();
 
   const filterMenu =
     category === 'ALL'
-      ? menus
-      : menus.filter((item) => item.category === category);
+      ? (data ?? [])
+      : (data?.filter((item) => item.category === category) ?? []);
 
   return (
     <div className="xl:w-[70%] h-full flex flex-col bg-white">
       <TableHeader setCategory={setCategory} />
-      <MenuGrid menus={filterMenu} />
+      <MenuGrid data={filterMenu} />
     </div>
   );
 };

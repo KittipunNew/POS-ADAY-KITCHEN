@@ -1,38 +1,54 @@
 'use client';
 import { useMenu } from '@/hooks/useMenu';
-import { Button } from '@/components/ui/button';
-import { api } from '@/lib/axios';
+import { useDeleteMenu } from '@/hooks/useMenu';
+import MenuCard from './MenuCard';
 
 const MenuList = () => {
   const { data, isLoading } = useMenu();
+  const deleteMenuMutation = useDeleteMenu();
 
   if (isLoading) return <p>Loading...</p>;
 
+  if (data?.length === 0) return <h1 className="mt-10 text-xl">ไม่พบข้อมูล</h1>;
+
+  const foods = data?.filter((item) => item.category === 'FOOD');
+  const drinks = data?.filter((item) => item.category === 'DRINK');
+
   const handleDeleteMenu = async (id: string) => {
-    try {
-      await api.delete('/menu/delete', { data: { id: id } });
-    } catch (err) {
-      console.log(err);
-    }
+    deleteMenuMutation.mutate(id);
   };
 
   return (
-    <div className="mt-5 grid grid-cols-5 gap-3">
-      {data?.map((item) => (
-        <div key={item._id} className="border-2 p-5 rounded-2xl">
-          <h1 className="text-xl font-bold">{item.name}</h1>
-          <div className="flex items-center justify-between">
-            <h1>{item.price} ฿</h1>
-            <Button
-              variant={'outline'}
-              className="text-red-500"
-              onClick={() => handleDeleteMenu(item._id)}
-            >
-              ลบ
-            </Button>
+    <div className="flex flex-col gap-20">
+      {foods?.length && (
+        <section>
+          <h1 className="text-3xl my-5">อาหาร</h1>
+          <div className="grid grid-cols-2 gap-3">
+            {foods.map((item) => (
+              <MenuCard
+                key={item._id}
+                item={item}
+                onDelete={handleDeleteMenu}
+              />
+            ))}
           </div>
-        </div>
-      ))}
+        </section>
+      )}
+
+      {drinks?.length && (
+        <section>
+          <h1 className="text-3xl my-5">เครื่องดื่ม</h1>
+          <div className="grid grid-cols-2 gap-3">
+            {drinks.map((item) => (
+              <MenuCard
+                key={item._id}
+                item={item}
+                onDelete={handleDeleteMenu}
+              />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 };

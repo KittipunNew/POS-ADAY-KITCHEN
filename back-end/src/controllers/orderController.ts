@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import OrderModel from '../models/orderModel';
 
 interface IncomingItem {
-  menuId: number;
+  _id: string;
   name: string;
   category: 'FOOD' | 'DRINK';
   quantity: number;
@@ -76,7 +76,7 @@ export const createOrder = async (req: Request, res: Response) => {
     // รวมรายการอาหารเข้าออเดอร์
     items.forEach((newItem: IncomingItem) => {
       const existItem = order.items.find(
-        (item: any) => item.menuId.toString() === newItem.menuId.toString(),
+        (item: any) => item._id === newItem._id,
       );
 
       if (existItem) {

@@ -20,7 +20,6 @@ const ConfirmOrderButton = ({ tableId }: { tableId: string }) => {
     const payload = {
       tableId,
       items: cartItems.map((item) => ({
-        menuId: item.menuId,
         name: item.name,
         category: item.category.toUpperCase(),
         quantity: item.quantity,

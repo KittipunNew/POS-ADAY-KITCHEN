@@ -3,16 +3,25 @@ import { useMenu } from '@/hooks/useMenu';
 import { useDeleteMenu } from '@/hooks/useMenu';
 import MenuCard from './MenuCard';
 
-const MenuList = () => {
+interface MenuListProps {
+  searchQuery: string;
+}
+
+const MenuList = ({ searchQuery }: MenuListProps) => {
   const { data, isLoading } = useMenu();
   const deleteMenuMutation = useDeleteMenu();
 
   if (isLoading) return <p>Loading...</p>;
 
-  if (data?.length === 0) return <h1 className="mt-10 text-xl">ไม่พบข้อมูล</h1>;
+  const filteredData = data?.filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase()),
+  );
 
-  const foods = data?.filter((item) => item.category === 'FOOD');
-  const drinks = data?.filter((item) => item.category === 'DRINK');
+  if (filteredData?.length === 0)
+    return <h1 className="mt-10 text-xl">ไม่พบข้อมูล</h1>;
+
+  const foods = filteredData?.filter((item) => item.category === 'FOOD');
+  const drinks = filteredData?.filter((item) => item.category === 'DRINK');
 
   const handleDeleteMenu = async (id: string) => {
     deleteMenuMutation.mutate(id);
@@ -20,7 +29,7 @@ const MenuList = () => {
 
   return (
     <div className="flex flex-col gap-20">
-      {foods?.length && (
+      {!!foods?.length && (
         <section>
           <h1 className="text-3xl my-5">อาหาร</h1>
           <div className="grid grid-cols-2 gap-3">
@@ -35,7 +44,7 @@ const MenuList = () => {
         </section>
       )}
 
-      {drinks?.length && (
+      {!!drinks?.length && (
         <section>
           <h1 className="text-3xl my-5">เครื่องดื่ม</h1>
           <div className="grid grid-cols-2 gap-3">

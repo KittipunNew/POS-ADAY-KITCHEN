@@ -1,11 +1,19 @@
 import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { Search } from 'lucide-react';
 
-const SearchInput = () => {
+interface SearchInputProps {
+  onSearch: (value: string) => void;
+}
+
+const SearchInput = ({ onSearch }: SearchInputProps) => {
   return (
-    <div className="flex gap-3">
-      <Input placeholder="ค้นหาเมนู" className="max-w-xl" />
-      <Button className="bg-yellow-500">ค้นหา</Button>
+    <div className="flex gap-3 items-center">
+      <Search />
+      <Input
+        placeholder="ค้นหาเมนู"
+        className="max-w-xl"
+        onChange={(e) => onSearch(e.target.value)}
+      />
     </div>
   );
 };

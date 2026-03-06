@@ -7,6 +7,7 @@ import connectDB from './config/db';
 
 import orderRoute from './routes/orderRoute';
 import menuRoute from './routes/menuRoute';
+import tableRoute from './routes/tableRoute';
 
 const app = express();
 const port = 5000;
@@ -24,6 +25,7 @@ app.use(cors());
 // Route
 app.use('/api', orderRoute);
 app.use('/api', menuRoute);
+app.use('/api', tableRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

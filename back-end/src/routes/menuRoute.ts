@@ -12,7 +12,7 @@ router.get('/menus', getMenus);
 router.post('/menu/create', createMenu);
 router.delete('/menu/delete', deleteMenu);
 
-// สำหรับเพิ่มรายการอาหารทีละหลายรายการ
+// สำหรับเพิ่มรายการอาหารทีละหลายรายการ ใช้ Post man เพิ่ม
 router.post('/menu/create-many-menu', createManyMenus);
 
 export default router;

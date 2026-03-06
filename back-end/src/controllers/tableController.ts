@@ -5,6 +5,8 @@ export const createTable = async (req: Request, res: Response) => {
   try {
     const { name, status } = req.body;
 
+    console.log(name, status);
+
     const table = new tableModel({
       name,
       status,

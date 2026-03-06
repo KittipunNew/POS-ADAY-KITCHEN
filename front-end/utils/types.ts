@@ -7,6 +7,14 @@ export interface Menu {
   price: number;
 }
 
+export type TableStatus = 'AVAILABLE' | 'OCCUPIED';
+
+export interface Table {
+  _id: string;
+  name: string;
+  status: TableStatus;
+}
+
 export interface CartItem extends Menu {
   quantity: number;
 }

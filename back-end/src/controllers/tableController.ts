@@ -10,8 +10,6 @@ export const createTable = async (req: Request, res: Response) => {
   try {
     const { name, status } = req.body;
 
-    console.log(name, status);
-
     const table = new tableModel({
       name,
       status,
@@ -19,6 +17,23 @@ export const createTable = async (req: Request, res: Response) => {
 
     await table.save();
     res.status(201).json(table);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+};
+
+export const deleteTable = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.body;
+
+    const table = await tableModel.findByIdAndDelete(id);
+
+    if (!table) {
+      return res.status(404).json({ message: 'Table not found' });
+    }
+
+    res.status(200).json({ message: 'Table deleted successfully', table });
   } catch (err) {
     console.error(err);
     res.status(500).send('Server Error');

@@ -37,7 +37,7 @@ const generateQueueNumber = async () => {
   let nextNum = 1;
 
   if (lastOrder) {
-    const lastId = lastOrder.tableId;
+    const lastId = lastOrder.tableName;
     const currentNum = parseInt(lastId.split('-')[1]);
     nextNum = currentNum + 1;
   }
@@ -48,15 +48,15 @@ const generateQueueNumber = async () => {
 // สร้างออเดอร์
 export const createOrder = async (req: Request, res: Response) => {
   try {
-    let { tableId } = req.body;
+    let { tableName, tableId } = req.body;
     const { items } = req.body;
 
     let order;
 
-    if (tableId === 'กลับบ้าน') {
-      tableId = await generateQueueNumber();
+    if (tableName === 'กลับบ้าน') {
+      tableName = await generateQueueNumber();
       order = new OrderModel({
-        tableId,
+        tableName,
         items: [],
       });
     } else {
@@ -68,6 +68,7 @@ export const createOrder = async (req: Request, res: Response) => {
       if (!order) {
         order = new OrderModel({
           tableId,
+          tableName,
           items: [],
         });
       }

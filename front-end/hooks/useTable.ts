@@ -1,7 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { addTable, deleteTable, getTables } from '@/services/tableService';
 import { Table } from '@/utils/types';
-import { error } from 'console';
 
 export const useTable = () => {
   return useQuery({

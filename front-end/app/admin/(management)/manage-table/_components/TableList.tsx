@@ -1,7 +1,6 @@
 'use client';
 
-import { useDeleteTable, useTable } from '@/hooks/useTable';
-import SelectStatusTable from './SelectStatusTable';
+import { useTable } from '@/hooks/useTable';
 import TableCard from './TableCard';
 
 const TableList = () => {

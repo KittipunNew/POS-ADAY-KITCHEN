@@ -10,6 +10,7 @@ interface OrderItem {
 
 interface Order extends Document {
   tableId: string;
+  tableName: string;
   items: OrderItem[];
   status: 'PENDING' | 'COOKING' | 'DONE' | 'CANCELLED';
 }
@@ -29,6 +30,7 @@ const orderItemSchema = new mongoose.Schema<OrderItem>({
 const orderSchema = new mongoose.Schema<Order>(
   {
     tableId: { type: String, required: true },
+    tableName: { type: String, required: true },
     items: [orderItemSchema],
     status: {
       type: String,

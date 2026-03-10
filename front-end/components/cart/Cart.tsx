@@ -6,16 +6,24 @@ import Summary from '../Summary';
 import { useCartStore } from '@/store/cart.store';
 import ConfirmOrderButton from './ConfirmOrderButton';
 import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useTable } from '@/hooks/useTable';
 
 const Cart = () => {
   const totalQty = useCartStore((s) => s.getTotalQty());
   const totalPrice = useCartStore((s) => s.getTotalPrice());
+  const { data } = useTable();
+  const [tableName, setTableName] = useState<string>('');
 
   const params = useParams();
-  const tableId =
-    (Array.isArray(params.tableId) ? params.tableId[0] : params.tableId) ?? '';
+  const tableId = params.tableId as string;
 
-  console.log(typeof tableId);
+  useEffect(() => {
+    const currentTable = data?.find((table) => table._id === tableId);
+    if (currentTable) {
+      setTableName(currentTable.name);
+    }
+  }, [data, tableId]);
 
   return (
     <div className="xl:w-[30%] h-full flex flex-col">
@@ -27,7 +35,7 @@ const Cart = () => {
           totalPrice={totalPrice}
           label="ยอดในตะกร้า"
         >
-          <ConfirmOrderButton tableId={tableId} />
+          <ConfirmOrderButton tableName={tableName} tableId={tableId} />
         </Summary>
       ) : (
         <Summary
@@ -35,7 +43,7 @@ const Cart = () => {
           totalPrice={totalPrice}
           label="ยอดที่ต้องชำระ"
         >
-          <ConfirmOrderButton tableId="กลับบ้าน" />
+          <ConfirmOrderButton tableName="กลับบ้าน" tableId={tableId} />
         </Summary>
       )}
     </div>

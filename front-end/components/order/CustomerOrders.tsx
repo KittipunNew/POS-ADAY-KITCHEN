@@ -15,7 +15,7 @@ const CustomerOrders = ({ orders }: { orders: OrderType[] }) => {
         <div key={item._id} className="flex flex-col gap-3">
           {item.items.map((order) => (
             <div
-              key={order.menuId}
+              key={order._id}
               className="flex items-center justify-between text-lg bg-white p-3 rounded-xl shadow"
             >
               <div className="flex items-center">

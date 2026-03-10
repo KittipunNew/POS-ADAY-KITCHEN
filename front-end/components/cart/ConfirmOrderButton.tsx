@@ -6,7 +6,13 @@ import { api } from '@/lib/axios';
 import { useState } from 'react';
 import TakeawayModal from '../TakeawayModal';
 
-const ConfirmOrderButton = ({ tableId }: { tableId: string }) => {
+const ConfirmOrderButton = ({
+  tableName,
+  tableId,
+}: {
+  tableName: string;
+  tableId: string;
+}) => {
   const cartItems = useCartStore((s) => s.cartItems);
   const clearCart = useCartStore((s) => s.clearCart);
 
@@ -18,6 +24,7 @@ const ConfirmOrderButton = ({ tableId }: { tableId: string }) => {
     setLoading(true);
 
     const payload = {
+      tableName,
       tableId,
       items: cartItems.map((item) => ({
         name: item.name,
@@ -40,7 +47,7 @@ const ConfirmOrderButton = ({ tableId }: { tableId: string }) => {
   };
 
   const handleButtonClick = () => {
-    if (tableId === 'กลับบ้าน') {
+    if (tableName === 'กลับบ้าน') {
       setShowModal(true);
     } else {
       submitOrder();
@@ -57,7 +64,7 @@ const ConfirmOrderButton = ({ tableId }: { tableId: string }) => {
       >
         {loading
           ? 'กำลังส่ง...'
-          : tableId === 'กลับบ้าน'
+          : tableName === 'กลับบ้าน'
             ? 'ชำระเงิน'
             : 'ยืนยันการสั่งอาหาร'}
       </Button>

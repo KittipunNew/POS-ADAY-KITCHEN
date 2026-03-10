@@ -1,6 +1,11 @@
 import { Request, Response } from 'express';
 import tableModel from '../models/tableModel';
 
+export const getTables = async (req: Request, res: Response) => {
+  const tables = await tableModel.find({});
+  res.status(200).send(tables);
+};
+
 export const createTable = async (req: Request, res: Response) => {
   try {
     const { name, status } = req.body;

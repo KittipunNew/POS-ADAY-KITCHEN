@@ -1,6 +1,14 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { addTable } from '@/services/tableService';
+import { addTable, getTables } from '@/services/tableService';
 import { Table } from '@/utils/types';
+
+export const useTable = () => {
+  return useQuery({
+    queryKey: ['tables'],
+    queryFn: getTables,
+    staleTime: 1000 * 60 * 5, // กำหนดเวลาให้ ระบบดึงข้อมูลจาก cache แทนการยิง API ถ้าเกิน 5 นาทีนี้ ระบบจะยิง API เพื่อดึงข้อมูลมาใหม่
+  });
+};
 
 export const useAddTable = () => {
   const queryClient = useQueryClient();

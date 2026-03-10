@@ -9,11 +9,13 @@ import {
 
 const SelectStatusTable = ({
   onValueChange,
+  value,
 }: {
   onValueChange: (value: string) => void;
+  value: string;
 }) => {
   return (
-    <Select onValueChange={onValueChange}>
+    <Select onValueChange={onValueChange} value={value}>
       <SelectTrigger className="w-full max-w-xl">
         <SelectValue placeholder="สถานะ" />
       </SelectTrigger>

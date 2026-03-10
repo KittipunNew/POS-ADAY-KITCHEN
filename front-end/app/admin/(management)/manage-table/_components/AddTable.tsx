@@ -13,7 +13,7 @@ const AddTable = () => {
     status: TableStatus | '';
   }>({
     name: '',
-    status: '',
+    status: 'AVAILABLE',
   });
 
   const addMenuMutation = useAddTable();
@@ -60,13 +60,16 @@ const AddTable = () => {
       <div className="flex flex-col gap-5">
         <Input
           type="text"
-          placeholder="เลขที่โต๊ะ"
+          placeholder="กรอกชื่อโต๊ะ"
           name="name"
           className="w-full"
           value={formData.name}
           onChange={handleChange}
         />
-        <SelectStatusTable onValueChange={handleStatusChange} />
+        <SelectStatusTable
+          value={formData.status}
+          onValueChange={handleStatusChange}
+        />
       </div>
       <Button type="submit" className="w-full mt-5 bg-yellow-500" size={'lg'}>
         เพิ่มโต๊ะ

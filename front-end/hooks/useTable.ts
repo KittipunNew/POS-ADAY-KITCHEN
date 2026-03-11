@@ -1,5 +1,10 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { addTable, deleteTable, getTables } from '@/services/tableService';
+import {
+  addTable,
+  deleteTable,
+  getTables,
+  updateTable,
+} from '@/services/tableService';
 import { Table } from '@/utils/types';
 
 export const useTable = () => {
@@ -20,6 +25,18 @@ export const useAddTable = () => {
     },
     onError: (error) => {
       console.error('Add table failed:', error);
+    },
+  });
+};
+
+export const useUpdateTable = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: ({ id, status }: { id: string; status: Table['status'] }) =>
+      updateTable(id, { status }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['tables'] });
     },
   });
 };

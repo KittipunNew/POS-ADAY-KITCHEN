@@ -6,8 +6,8 @@ import { useIsMobile } from '@/hooks/useIsMobile';
 import MenuCard from './MenuCard';
 import PaginationPage from './PaginationPage';
 
-const MOBILE_ITEMS = 10;
-const DESKTOP_ITEMS = 6;
+const MOBILE_ITEMS = 6;
+const DESKTOP_ITEMS = 12;
 
 const MenuGrid = ({ data }: { data: Menu[] }) => {
   const isMobile = useIsMobile();
@@ -27,13 +27,13 @@ const MenuGrid = ({ data }: { data: Menu[] }) => {
   );
 
   return (
-    <div className="flex flex-col justify-between h-full">
-      <div className="grid grid-cols-2 gap-4 p-3 flex-1">
+    <div className="flex flex-col h-full">
+      <div className="grid grid-cols-2 xl:grid-cols-4 gap-5 p-3 bg-white">
         {currentMenus?.map((item) => (
           <MenuCard key={item._id} item={item} />
         ))}
       </div>
-
+      <div className="bg-white flex-1"></div>
       <PaginationPage page={page} setPage={setPage} totalPages={totalPages} />
     </div>
   );

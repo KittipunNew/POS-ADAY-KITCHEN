@@ -17,7 +17,7 @@ const PaginationPage = ({
   totalPages: number;
 }) => {
   return (
-    <div className="bg-white py-2">
+    <div className="bg-white py-5">
       <Pagination>
         <PaginationContent>
           <PaginationItem>

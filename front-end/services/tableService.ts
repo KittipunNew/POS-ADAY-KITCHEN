@@ -22,6 +22,15 @@ export const getTables = async () => {
   }
 };
 
+export const updateTable = async (id: string, updatedData: Partial<Table>) => {
+  try {
+    const res = await api.put(`/table/update/${id}`, updatedData);
+    return res.data;
+  } catch (error) {
+    throw new Error('อัปเดตข้อมูลไม่สำเร็จ');
+  }
+};
+
 export const deleteTable = async (id: string) => {
   try {
     await api.delete('/table/delete', { data: { id: id } });

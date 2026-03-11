@@ -29,6 +29,7 @@ const Cart = () => {
     <div className="xl:w-[30%] h-full flex flex-col">
       <OrderPanel />
       <CartList />
+
       {params.tableId ? (
         <Summary
           totalQty={totalQty}

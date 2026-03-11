@@ -13,7 +13,7 @@ const CartButton = () => {
     <Button
       onClick={showCart}
       size={'icon-lg'}
-      className="fixed bottom-5 right-5 bg-yellow-500 p-6 rounded-full shadow-xl border"
+      className="fixed bottom-13 right-5 bg-yellow-500 p-3 rounded-full shadow-xl border"
     >
       <ShoppingCart className="text-white" size={28} />
       <div

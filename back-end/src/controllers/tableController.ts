@@ -23,6 +23,26 @@ export const createTable = async (req: Request, res: Response) => {
   }
 };
 
+export const updateTable = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const { name, status } = req.body;
+
+    const updatedTable = await tableModel.findByIdAndUpdate(
+      id,
+      { name, status },
+      { new: true, runValidators: true },
+    );
+
+    if (!updatedTable) {
+      return res.status(404).json({ message: 'Table not found' });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+};
+
 export const deleteTable = async (req: Request, res: Response) => {
   try {
     const { id } = req.body;

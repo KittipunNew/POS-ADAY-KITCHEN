@@ -6,16 +6,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { Table } from '@/utils/types';
 
 const SelectStatusTable = ({
   onValueChange,
   value,
 }: {
-  onValueChange: (value: string) => void;
-  value: string;
+  onValueChange: (value: Table['status']) => void;
+  value: Table['status'];
 }) => {
   return (
-    <Select onValueChange={onValueChange} value={value}>
+    <Select
+      onValueChange={(val) => onValueChange(val as Table['status'])}
+      value={value}
+    >
       <SelectTrigger className="w-full max-w-xl">
         <SelectValue placeholder="สถานะ" />
       </SelectTrigger>

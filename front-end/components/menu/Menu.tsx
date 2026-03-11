@@ -8,7 +8,7 @@ import { useMenu } from '@/hooks/useMenu';
 
 const MenuClient = () => {
   const [category, setCategory] = useState<Category>('ALL');
-  const { data, isLoading } = useMenu();
+  const { data } = useMenu();
 
   const filterMenu =
     category === 'ALL'
@@ -16,7 +16,7 @@ const MenuClient = () => {
       : (data?.filter((item) => item.category === category) ?? []);
 
   return (
-    <div className="xl:w-[70%] h-full flex flex-col bg-white">
+    <div className="xl:w-[70%] flex flex-col h-full">
       <TableHeader setCategory={setCategory} />
       <MenuGrid data={filterMenu} />
     </div>

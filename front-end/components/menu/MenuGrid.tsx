@@ -28,7 +28,7 @@ const MenuGrid = ({ data }: { data: Menu[] }) => {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="grid grid-cols-2 xl:grid-cols-4 gap-5 p-3 bg-white">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 p-3 bg-white">
         {currentMenus?.map((item) => (
           <MenuCard key={item._id} item={item} />
         ))}

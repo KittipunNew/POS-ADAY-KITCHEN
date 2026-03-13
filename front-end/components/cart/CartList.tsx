@@ -13,7 +13,7 @@ const CartList = () => {
     );
   }
   return (
-    <div className="flex-1 flex flex-col gap-3 py-5 px-3 overflow-y-auto">
+    <div className="flex-1 flex flex-col gap-3 py-5 px-3 xl:overflow-y-auto">
       {cartItem.map((item, index) => (
         <div
           key={index}
@@ -28,6 +28,7 @@ const CartList = () => {
           </div>
         </div>
       ))}
+      <div className="xl:hidden py-16"></div>
     </div>
   );
 };

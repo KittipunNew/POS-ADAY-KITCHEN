@@ -14,21 +14,21 @@ const MenuCard = ({ item }: MenuCardProps) => {
 
   return (
     <div className="flex flex-col justify-around md:justify-center items-center border shadow rounded-2xl p-3">
-      <div className="relative w-full h-32 xl:w-40 xl:h-32">
+      <div className="relative w-full h-32 md:w-44 md:h-40 xl:w-40 xl:h-32">
         <Image src={กระเพรา} alt="ผัดกะเพรา" fill className="object-cove" />
       </div>
       <div className="flex justify-between items-center w-full">
         <div className="w-full">
-          <p>{item.name}</p>
-          <p className="text-sm text-neutral-400">{item.price} ฿</p>
+          <p className="text-sm md:text-base">{item.name}</p>
+          <p className="text-xs md:text-sm text-neutral-400">{item.price} ฿</p>
         </div>
         <Button
           key={item._id}
           variant={'outline'}
-          className="bg-yellow-500 text-white"
+          className="bg-yellow-100 text-yellow-500 border-2 border-yellow-500"
           onClick={() => addToCart(item)}
         >
-          <Plus />
+          <Plus strokeWidth={4} />
         </Button>
       </div>
     </div>

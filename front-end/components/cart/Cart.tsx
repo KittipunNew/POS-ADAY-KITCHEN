@@ -26,26 +26,30 @@ const Cart = () => {
   }, [data, tableId]);
 
   return (
-    <div className="xl:w-[30%] h-full flex flex-col">
+    <div className="xl:w-[30%] flex flex-col h-screen xl:h-full">
       <OrderPanel />
       <CartList />
 
       {params.tableId ? (
-        <Summary
-          totalQty={totalQty}
-          totalPrice={totalPrice}
-          label="ยอดในตะกร้า"
-        >
-          <ConfirmOrderButton tableName={tableName} tableId={tableId} />
-        </Summary>
+        <div className="fixed w-full bottom-0 xl:static">
+          <Summary
+            totalQty={totalQty}
+            totalPrice={totalPrice}
+            label="ยอดในตะกร้า"
+          >
+            <ConfirmOrderButton tableName={tableName} tableId={tableId} />
+          </Summary>
+        </div>
       ) : (
-        <Summary
-          totalQty={totalQty}
-          totalPrice={totalPrice}
-          label="ยอดที่ต้องชำระ"
-        >
-          <ConfirmOrderButton tableName="กลับบ้าน" tableId={tableId} />
-        </Summary>
+        <div className="fixed w-full bottom-0 xl:static">
+          <Summary
+            totalQty={totalQty}
+            totalPrice={totalPrice}
+            label="ยอดที่ต้องชำระ"
+          >
+            <ConfirmOrderButton tableName="กลับบ้าน" tableId={tableId} />
+          </Summary>
+        </div>
       )}
     </div>
   );

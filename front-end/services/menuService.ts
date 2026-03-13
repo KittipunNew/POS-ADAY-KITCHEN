@@ -10,9 +10,13 @@ export const getMenus = async (): Promise<Menu[]> => {
   }
 };
 
-export const addMenu = async (newMenu: Partial<Menu>) => {
+export const addMenu = async (payload: FormData) => {
   try {
-    const res = await api.post('/menu/create', newMenu);
+    const res = await api.post('/menu/create', payload, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
     return res.data;
   } catch (error) {
     throw new Error('เพิ่มข้อมูลไม่สำเร็จ');

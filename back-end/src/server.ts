@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import dotenv from 'dotenv';
+dotenv.config();
 
 import connectDB from './config/db';
 
@@ -12,7 +13,6 @@ import tableRoute from './routes/tableRoute';
 const app = express();
 const port = 5000;
 
-dotenv.config();
 connectDB();
 
 // parsing

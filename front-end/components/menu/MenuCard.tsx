@@ -12,10 +12,25 @@ interface MenuCardProps {
 const MenuCard = ({ item }: MenuCardProps) => {
   const addToCart = useCartStore((s) => s.addToCart);
 
+  console.log(item);
+
   return (
     <div className="flex flex-col justify-around md:justify-center items-center border shadow rounded-2xl p-3">
       <div className="relative w-full h-32 md:w-44 md:h-40 xl:w-40 xl:h-32">
-        <Image src={กระเพรา} alt="ผัดกะเพรา" fill className="object-cove" />
+        {item.image ? (
+          <Image
+            src={item.image}
+            alt={item.name}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cove"
+            loading="eager"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center rounded-xl">
+            <p className="text-gray-400 text-xs">ไม่มีรูปภาพ</p>
+          </div>
+        )}
       </div>
       <div className="flex justify-between items-center w-full">
         <div className="w-full">

@@ -5,6 +5,7 @@ export interface Menu {
   name: string;
   category: Category;
   price: number;
+  image: string;
 }
 
 export type TableStatus = 'AVAILABLE' | 'OCCUPIED';

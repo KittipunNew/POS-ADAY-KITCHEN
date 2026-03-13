@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import menuModel from '../models/menuModel';
+import upload from '../config/cloudinary';
 
 export const getMenus = async (req: Request, res: Response) => {
   const menus = await menuModel.find({});
@@ -9,12 +10,18 @@ export const getMenus = async (req: Request, res: Response) => {
 export const createMenu = async (req: Request, res: Response) => {
   try {
     const { name, category, price } = req.body;
-    console.log(req.body);
+
+    if (!req.file) {
+      return res.status(400).json({ error: 'กรุณาอัปโหลดรูปภาพ' });
+    }
+
+    const imageUrl = req.file.path;
 
     const menu = new menuModel({
       name,
       category,
       price,
+      image: imageUrl,
     });
 
     await menu.save();

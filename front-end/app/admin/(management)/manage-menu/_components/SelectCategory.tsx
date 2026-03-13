@@ -13,7 +13,7 @@ const SelectCategory = ({
   onValueChange: (value: string) => void;
 }) => {
   return (
-    <Select onValueChange={onValueChange}>
+    <Select onValueChange={onValueChange} defaultValue="FOOD">
       <SelectTrigger className="w-full max-w-xl">
         <SelectValue placeholder="ประเภท" />
       </SelectTrigger>
